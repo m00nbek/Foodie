@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB00926326B3C355004AD757 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00926226B3C355004AD757 /* Protocols.swift */; };
 		ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE4C45626B1810500DBDCA4 /* AppDelegate.swift */; };
 		ABE4C45926B1810500DBDCA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE4C45826B1810500DBDCA4 /* SceneDelegate.swift */; };
 		ABE4C46026B1810600DBDCA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE4C45F26B1810600DBDCA4 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB00926226B3C355004AD757 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		ABE4C45326B1810500DBDCA4 /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE4C45626B1810500DBDCA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE4C45826B1810500DBDCA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				ABE4C46F26B18A1A00DBDCA4 /* Presenter */,
 				ABE4C46E26B18A0100DBDCA4 /* Entity */,
 				ABE4C46D26B189F900DBDCA4 /* Router */,
+				AB00926226B3C355004AD757 /* Protocols.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB00926326B3C355004AD757 /* Protocols.swift in Sources */,
 				ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */,
 				ABE4C47326B18AFE00DBDCA4 /* LoginController.swift in Sources */,
 				ABE4C47526B18C2300DBDCA4 /* WelcomeController.swift in Sources */,
