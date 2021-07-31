@@ -14,6 +14,8 @@
 		ABE4C46326B1810600DBDCA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE4C46126B1810600DBDCA4 /* LaunchScreen.storyboard */; };
 		ABE4C47326B18AFE00DBDCA4 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE4C47226B18AFE00DBDCA4 /* LoginController.swift */; };
 		ABE4C47526B18C2300DBDCA4 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE4C47426B18C2300DBDCA4 /* WelcomeController.swift */; };
+		ABFED6F826B55B9100231A1D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFED6F726B55B9100231A1D /* LoginView.swift */; };
+		ABFED6FA26B55C2A00231A1D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFED6F926B55C2A00231A1D /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		ABE4C46426B1810600DBDCA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABE4C47226B18AFE00DBDCA4 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		ABE4C47426B18C2300DBDCA4 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		ABFED6F726B55B9100231A1D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		ABFED6F926B55C2A00231A1D /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 			children = (
 				ABE4C47226B18AFE00DBDCA4 /* LoginController.swift */,
 				ABE4C47426B18C2300DBDCA4 /* WelcomeController.swift */,
+				ABFED6F726B55B9100231A1D /* LoginView.swift */,
+				ABFED6F926B55C2A00231A1D /* RegisterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,7 +213,9 @@
 				AB00926326B3C355004AD757 /* Protocols.swift in Sources */,
 				ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */,
 				ABE4C47326B18AFE00DBDCA4 /* LoginController.swift in Sources */,
+				ABFED6FA26B55C2A00231A1D /* RegisterView.swift in Sources */,
 				ABE4C47526B18C2300DBDCA4 /* WelcomeController.swift in Sources */,
+				ABFED6F826B55B9100231A1D /* LoginView.swift in Sources */,
 				ABE4C45926B1810500DBDCA4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
