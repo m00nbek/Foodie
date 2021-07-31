@@ -62,15 +62,19 @@ class WelcomeController: UIViewController {
         button.backgroundColor = .white
         button.layer.cornerRadius = 25
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        button.addTarget(self, action: #selector(getStarted), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     // MARK: - Selectors
+    @objc private func getStarted() {
+        // show LoginController
+        navigationController?.pushViewController(LoginController(), animated: true)
+    }
     // MARK: - API
     // MARK: - Functions
     private func configureUI() {
         view.backgroundColor = UIColor(named: "mainOrange")
-        
         
         view.addSubview(logoImageView)
         logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
@@ -85,14 +89,6 @@ class WelcomeController: UIViewController {
         toyImageView.topAnchor.constraint(equalTo: foodLabel.bottomAnchor, constant: 20).isActive = true
         toyImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         toyImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
-//        gradientView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-//        gradientView.heightAnchor.constraint(equalToConstant: view.widthAnchor.).isActive = true
-//
-//        view.addSubview(gradientView)
-//        gradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//        gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        gradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         view.addSubview(getStartedButton)
         getStartedButton.topAnchor.constraint(equalTo: toyImageView.bottomAnchor, constant: 10).isActive = true
