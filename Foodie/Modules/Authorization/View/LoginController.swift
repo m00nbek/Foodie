@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginController: UIPageViewController {
+class LoginController: UIViewController {
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
