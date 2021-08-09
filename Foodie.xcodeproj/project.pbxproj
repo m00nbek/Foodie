@@ -12,6 +12,12 @@
 		AB139B9B26C1001000D5A514 /* RootProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139B9A26C1001000D5A514 /* RootProtocols.swift */; };
 		AB139B9D26C105AD00D5A514 /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139B9C26C105AD00D5A514 /* RootPresenter.swift */; };
 		AB139B9F26C105B700D5A514 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139B9E26C105B700D5A514 /* RootInteractor.swift */; };
+		AB139BA626C1318200D5A514 /* WelcomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BA526C1318200D5A514 /* WelcomeProtocols.swift */; };
+		AB139BA826C1319A00D5A514 /* viper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BA726C1319A00D5A514 /* viper.swift */; };
+		AB139BAA26C132A700D5A514 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BA926C132A700D5A514 /* WelcomeViewController.swift */; };
+		AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAB26C132B000D5A514 /* WelcomeInteractor.swift */; };
+		AB139BAE26C132BA00D5A514 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAD26C132BA00D5A514 /* WelcomePresenter.swift */; };
+		AB139BB026C1332800D5A514 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAF26C1332800D5A514 /* WelcomeRouter.swift */; };
 		ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE4C45626B1810500DBDCA4 /* AppDelegate.swift */; };
 		ABE4C45926B1810500DBDCA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE4C45826B1810500DBDCA4 /* SceneDelegate.swift */; };
 		ABE4C46026B1810600DBDCA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE4C45F26B1810600DBDCA4 /* Assets.xcassets */; };
@@ -24,6 +30,12 @@
 		AB139B9A26C1001000D5A514 /* RootProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootProtocols.swift; sourceTree = "<group>"; };
 		AB139B9C26C105AD00D5A514 /* RootPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
 		AB139B9E26C105B700D5A514 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		AB139BA526C1318200D5A514 /* WelcomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeProtocols.swift; sourceTree = "<group>"; };
+		AB139BA726C1319A00D5A514 /* viper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viper.swift; sourceTree = "<group>"; };
+		AB139BA926C132A700D5A514 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		AB139BAB26C132B000D5A514 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
+		AB139BAD26C132BA00D5A514 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		AB139BAF26C1332800D5A514 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
 		ABE4C45326B1810500DBDCA4 /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE4C45626B1810500DBDCA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE4C45826B1810500DBDCA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +71,12 @@
 		AB139B9026C0F3C900D5A514 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				AB139BA426C1317300D5A514 /* View */,
+				AB139BA326C1316600D5A514 /* Interactor */,
+				AB139BA226C1315B00D5A514 /* Presenter */,
+				AB139BA126C1315300D5A514 /* Entity */,
+				AB139BA026C1314C00D5A514 /* Router */,
+				AB139BA526C1318200D5A514 /* WelcomeProtocols.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -102,6 +120,45 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AB139BA026C1314C00D5A514 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AB139BAF26C1332800D5A514 /* WelcomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AB139BA126C1315300D5A514 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AB139BA226C1315B00D5A514 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB139BAD26C132BA00D5A514 /* WelcomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AB139BA326C1316600D5A514 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AB139BAB26C132B000D5A514 /* WelcomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AB139BA426C1317300D5A514 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB139BA926C132A700D5A514 /* WelcomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		ABE4C44A26B1810500DBDCA4 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +198,7 @@
 		ABE4C46B26B1851F00DBDCA4 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				AB139BA726C1319A00D5A514 /* viper.swift */,
 				ABE4C45626B1810500DBDCA4 /* AppDelegate.swift */,
 				ABE4C45826B1810500DBDCA4 /* SceneDelegate.swift */,
 				ABE4C46126B1810600DBDCA4 /* LaunchScreen.storyboard */,
@@ -219,9 +277,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB139B9226C0FFB700D5A514 /* RootTabBarController.swift in Sources */,
+				AB139BAE26C132BA00D5A514 /* WelcomePresenter.swift in Sources */,
+				AB139BAA26C132A700D5A514 /* WelcomeViewController.swift in Sources */,
+				AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */,
 				ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */,
+				AB139BB026C1332800D5A514 /* WelcomeRouter.swift in Sources */,
+				AB139BA626C1318200D5A514 /* WelcomeProtocols.swift in Sources */,
 				AB139B9B26C1001000D5A514 /* RootProtocols.swift in Sources */,
 				AB139B9426C0FFC400D5A514 /* RootRouter.swift in Sources */,
+				AB139BA826C1319A00D5A514 /* viper.swift in Sources */,
 				AB139B9F26C105B700D5A514 /* RootInteractor.swift in Sources */,
 				AB139B9D26C105AD00D5A514 /* RootPresenter.swift in Sources */,
 				ABE4C45926B1810500DBDCA4 /* SceneDelegate.swift in Sources */,
