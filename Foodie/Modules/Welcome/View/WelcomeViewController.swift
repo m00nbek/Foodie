@@ -18,6 +18,6 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
     // MARK: - Selectors
     // MARK: - Functions
     private func setupUI() {
-
+        view.backgroundColor = .red
     }
 }

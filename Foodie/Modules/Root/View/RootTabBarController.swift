@@ -14,11 +14,15 @@ class RootTabBarController: UITabBarController, RootViewProtocol {
         super.viewDidLoad()
         setupUI()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter?.presentWelcome(in: self)
+    }
     // MARK: - Properties
     var presenter: RootPresenterProtocol?
     // MARK: - Selectors
     // MARK: - Functions
     private func setupUI() {
-        
+        view.backgroundColor = .white
     }
 }
