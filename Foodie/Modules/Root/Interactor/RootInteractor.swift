@@ -1,0 +1,12 @@
+//
+//  RootInteractor.swift
+//  RootInteractor
+//
+//  Created by Oybek on 8/9/21.
+//
+
+import Foundation
+
+class RootInteractor: RootInteractorProtocol {
+    var presenter: RootPresenterProtocol?
+}
