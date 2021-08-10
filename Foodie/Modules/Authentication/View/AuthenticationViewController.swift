@@ -79,6 +79,9 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.isPagingEnabled = true
+        scrollView.bounces = false
+        scrollView.alwaysBounceVertical = false
+        
         scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(views.count), height: sixtyPercentHeight)
         
         for i in 0..<views.count {
@@ -89,15 +92,23 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
-    private lazy var views = [LoginView(), RegisterView()]
+    private let loginView = LoginView()
+    private let registerView = RegisterView()
+    private lazy var views = [loginView, registerView]
     // MARK: - Selectors
     @objc private func loginTapped() {
-        loginBorder.backgroundColor = UIColor(named: "mainOrange")
-        signUpBorder.backgroundColor = .clear
+        UIViewPropertyAnimator.init(duration: 0.3, curve: .linear) {
+            self.loginBorder.backgroundColor = UIColor(named: "mainOrange")
+            self.signUpBorder.backgroundColor = .clear
+            self.scrollToView(self.loginView)
+        }.startAnimation()
     }
     @objc private func signUpTapped() {
-        loginBorder.backgroundColor = .clear
-        signUpBorder.backgroundColor = UIColor(named: "mainOrange")
+        UIViewPropertyAnimator.init(duration: 0.3, curve: .linear) {
+            self.loginBorder.backgroundColor = .clear
+            self.signUpBorder.backgroundColor = UIColor(named: "mainOrange")
+            self.scrollToView(self.registerView)
+        }.startAnimation()
     }
     // MARK: - Selectors
     // MARK: - Functions
@@ -141,8 +152,18 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
             border.bottomAnchor.constraint(equalTo: button.bottomAnchor)
         ])
     }
+    func scrollToView(_ view: UIView) {
+        scrollView.setContentOffset(CGPoint(x: view.frame.minX, y: view.frame.minY), animated: true)
+    }
 }
 // MARK: - UIScrollViewDelegate
 extension AuthenticationViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if signUpBorder.backgroundColor == .clear {
+            signUpTapped()
+        } else {
+            loginTapped()
+        }
+    }
 }
 
