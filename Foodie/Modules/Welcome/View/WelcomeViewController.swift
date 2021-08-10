@@ -65,11 +65,13 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
         button.addTarget(self, action: #selector(getStarted), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
         return button
     }()
     // MARK: - Selectors
     @objc private func getStarted() {
         // show Authentication
+        presenter?.showAuthentication(navigationController: navigationController)
     }
     // MARK: - Functions
     private func setupUI() {

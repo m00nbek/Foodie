@@ -8,7 +8,7 @@
 import UIKit
 
 class WelcomeRouter: WelcomeRouterProtocol {
-    func createWelcome() -> UIViewController & WelcomeViewProtocol {
+    static func createWelcome() -> UIViewController & WelcomeViewProtocol {
         var view: UIViewController & WelcomeViewProtocol = WelcomeViewController()
         var interactor: WelcomeInteractorProtocol = WelcomeInteractor()
         var presenter: WelcomePresenterProtocol = WelcomePresenter()
@@ -22,5 +22,9 @@ class WelcomeRouter: WelcomeRouterProtocol {
         presenter.interactor = interactor
         presenter.router = router
         return view
+    }
+    func pushAuthentication(navigationController: UINavigationController?) {
+        let authentication = AuthenticationRouter.createAuthentication()
+        navigationController?.pushViewController(authentication, animated: true)
     }
 }

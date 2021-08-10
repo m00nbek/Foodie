@@ -26,7 +26,7 @@ class RootRouter: RootRouterProtocol {
         return view
     }
     func presentWelcome(in view: UIViewController?) {
-        let welcomeVC = WelcomeRouter().createWelcome()
+        let welcomeVC = WelcomeRouter.createWelcome()
         let nav = UINavigationController(rootViewController: welcomeVC)
         nav.modalPresentationStyle = .fullScreen
         view?.present(nav, animated: true)
