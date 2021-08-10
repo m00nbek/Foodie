@@ -21,7 +21,6 @@ class WelcomeRouter: WelcomeRouterProtocol {
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
-
         return view
     }
 }
