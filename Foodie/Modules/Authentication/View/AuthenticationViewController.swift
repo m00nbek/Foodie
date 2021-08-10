@@ -15,13 +15,13 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
     }
     // MARK: - Properties
     var presenter: AuthenticationPresenterProtocol?
-    private lazy var loginBorder: UIView = {
+    private let loginBorder: UIView = {
         let loginBorder = UIView()
         loginBorder.backgroundColor = UIColor(named: "mainOrange")
         loginBorder.translatesAutoresizingMaskIntoConstraints = false
         return loginBorder
     }()
-    private lazy var signUpBorder: UIView = {
+    private let signUpBorder: UIView = {
         let signUpBorder = UIView()
         signUpBorder.backgroundColor = .clear
         signUpBorder.translatesAutoresizingMaskIntoConstraints = false
@@ -74,8 +74,6 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         return stack
     }()
     private lazy var sixtyPercentHeight = (60/100) * view.frame.height
-    private let loginView = LoginView()
-    private let registerView = RegisterView()
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
@@ -91,7 +89,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
-    private lazy var views = [loginView, registerView]
+    private lazy var views = [LoginView(), RegisterView()]
     // MARK: - Selectors
     @objc private func loginTapped() {
         loginBorder.backgroundColor = UIColor(named: "mainOrange")
@@ -106,38 +104,42 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
     private func setupUI() {
         view.backgroundColor = .white
         // setup button indicator
-        loginButton.addSubview(loginBorder)
-        NSLayoutConstraint.activate([
-            loginBorder.heightAnchor.constraint(equalToConstant: 2),
-            loginBorder.widthAnchor.constraint(equalTo: loginButton.widthAnchor),
-            loginBorder.bottomAnchor.constraint(equalTo: loginButton.bottomAnchor)
-        ])
-        signUpButton.addSubview(signUpBorder)
-        NSLayoutConstraint.activate([
-            signUpBorder.heightAnchor.constraint(equalToConstant: 2),
-            signUpBorder.widthAnchor.constraint(equalTo: signUpButton.widthAnchor),
-            signUpBorder.bottomAnchor.constraint(equalTo: signUpButton.bottomAnchor)
-        ])
-        // constraints
-        logoImageView.heightAnchor.constraint(equalToConstant: (view.frame.height/4) - 50).isActive = true
-        view.addSubview(logoImageView)
-        logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        logoImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        logoImageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        
-        scrollView.heightAnchor.constraint(equalToConstant: sixtyPercentHeight).isActive = true
+        setupBorder(for: loginButton, with: loginBorder)
+        setupBorder(for: signUpButton, with: signUpBorder)
+        // subviews
         view.addSubview(scrollView)
-        
-        buttonStack.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        view.addSubview(logoImageView)
         view.addSubview(buttonStack)
-        buttonStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        buttonStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        
-        scrollView.topAnchor.constraint(equalTo: buttonStack.bottomAnchor, constant: -30).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        // logoImageView constraints
+        NSLayoutConstraint.activate([
+            logoImageView.heightAnchor.constraint(equalToConstant: (view.frame.height/4) - 50),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            logoImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            logoImageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+        // buttonStack constraints
+        NSLayoutConstraint.activate([
+            buttonStack.heightAnchor.constraint(equalToConstant: 50),
+            buttonStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            buttonStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ])
+        // scrollView constraints
+        NSLayoutConstraint.activate([
+            scrollView.heightAnchor.constraint(equalToConstant: sixtyPercentHeight),
+            scrollView.topAnchor.constraint(equalTo: buttonStack.bottomAnchor, constant: -30),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
 
+    }
+    private func setupBorder(for button: UIButton, with border: UIView) {
+        button.addSubview(border)
+        NSLayoutConstraint.activate([
+            border.heightAnchor.constraint(equalToConstant: 2),
+            border.widthAnchor.constraint(equalTo: button.widthAnchor),
+            border.bottomAnchor.constraint(equalTo: button.bottomAnchor)
+        ])
     }
 }
 // MARK: - UIScrollViewDelegate
