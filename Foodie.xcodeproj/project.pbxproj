@@ -18,6 +18,11 @@
 		AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAB26C132B000D5A514 /* WelcomeInteractor.swift */; };
 		AB139BAE26C132BA00D5A514 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAD26C132BA00D5A514 /* WelcomePresenter.swift */; };
 		AB139BB026C1332800D5A514 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAF26C1332800D5A514 /* WelcomeRouter.swift */; };
+		AB97CFF926C27303008F9D39 /* AuthenticationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */; };
+		AB97CFFB26C2734D008F9D39 /* AuthenticationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFFA26C2734D008F9D39 /* AuthenticationRouter.swift */; };
+		AB97CFFD26C273A5008F9D39 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFFC26C273A5008F9D39 /* AuthenticationPresenter.swift */; };
+		AB97CFFF26C273AF008F9D39 /* AuthenticationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFFE26C273AF008F9D39 /* AuthenticationInteractor.swift */; };
+		AB97D00126C273B8008F9D39 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97D00026C273B8008F9D39 /* AuthenticationViewController.swift */; };
 		ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE4C45626B1810500DBDCA4 /* AppDelegate.swift */; };
 		ABE4C45926B1810500DBDCA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE4C45826B1810500DBDCA4 /* SceneDelegate.swift */; };
 		ABE4C46026B1810600DBDCA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE4C45F26B1810600DBDCA4 /* Assets.xcassets */; };
@@ -36,6 +41,11 @@
 		AB139BAB26C132B000D5A514 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		AB139BAD26C132BA00D5A514 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		AB139BAF26C1332800D5A514 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
+		AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocols.swift; sourceTree = "<group>"; };
+		AB97CFFA26C2734D008F9D39 /* AuthenticationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRouter.swift; sourceTree = "<group>"; };
+		AB97CFFC26C273A5008F9D39 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
+		AB97CFFE26C273AF008F9D39 /* AuthenticationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractor.swift; sourceTree = "<group>"; };
+		AB97D00026C273B8008F9D39 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		ABE4C45326B1810500DBDCA4 /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE4C45626B1810500DBDCA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE4C45826B1810500DBDCA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +169,58 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AB97CFF226C272CE008F9D39 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				AB97CFF726C272F6008F9D39 /* View */,
+				AB97CFF626C272F3008F9D39 /* Interactor */,
+				AB97CFF526C272EE008F9D39 /* Presenter */,
+				AB97CFF426C272E7008F9D39 /* Entity */,
+				AB97CFF326C272E3008F9D39 /* Router */,
+				AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		AB97CFF326C272E3008F9D39 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AB97CFFA26C2734D008F9D39 /* AuthenticationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AB97CFF426C272E7008F9D39 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AB97CFF526C272EE008F9D39 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB97CFFC26C273A5008F9D39 /* AuthenticationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AB97CFF626C272F3008F9D39 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AB97CFFE26C273AF008F9D39 /* AuthenticationInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AB97CFF726C272F6008F9D39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB97D00026C273B8008F9D39 /* AuthenticationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		ABE4C44A26B1810500DBDCA4 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +253,7 @@
 			children = (
 				AB139B8F26C0F3A500D5A514 /* Root */,
 				AB139B9026C0F3C900D5A514 /* Welcome */,
+				AB97CFF226C272CE008F9D39 /* Authentication */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -276,14 +339,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB97CFFD26C273A5008F9D39 /* AuthenticationPresenter.swift in Sources */,
 				AB139B9226C0FFB700D5A514 /* RootTabBarController.swift in Sources */,
 				AB139BAE26C132BA00D5A514 /* WelcomePresenter.swift in Sources */,
+				AB97CFFB26C2734D008F9D39 /* AuthenticationRouter.swift in Sources */,
+				AB97D00126C273B8008F9D39 /* AuthenticationViewController.swift in Sources */,
 				AB139BAA26C132A700D5A514 /* WelcomeViewController.swift in Sources */,
 				AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */,
 				ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */,
+				AB97CFF926C27303008F9D39 /* AuthenticationProtocols.swift in Sources */,
 				AB139BB026C1332800D5A514 /* WelcomeRouter.swift in Sources */,
 				AB139BA626C1318200D5A514 /* WelcomeProtocols.swift in Sources */,
 				AB139B9B26C1001000D5A514 /* RootProtocols.swift in Sources */,
+				AB97CFFF26C273AF008F9D39 /* AuthenticationInteractor.swift in Sources */,
 				AB139B9426C0FFC400D5A514 /* RootRouter.swift in Sources */,
 				AB139BA826C1319A00D5A514 /* viper.swift in Sources */,
 				AB139B9F26C105B700D5A514 /* RootInteractor.swift in Sources */,

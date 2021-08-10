@@ -31,7 +31,7 @@ class ModulePresenter: ModulePresenterProtocol {
 
 // MARK: - Router
 class ModuleRouter: ModuleRouterProtocol {
-    func createModule() -> UIViewController & ModuleViewProtocol {
+    static func createModule() -> UIViewController & ModuleViewProtocol {
         var view: UIViewController & ModuleViewProtocol = ModuleViewController()
         var interactor: ModuleInteractorProtocol = ModuleInteractor()
         var presenter: ModulePresenterProtocol = ModulePresenter()
@@ -62,5 +62,5 @@ protocol ModulePresenterProtocol {
     var router: ModuleRouterProtocol? {get set}
 }
 protocol ModuleRouterProtocol {
-    func createModule() -> UIViewController & ModuleViewProtocol
+    static func createModule() -> UIViewController & ModuleViewProtocol
 }
