@@ -75,26 +75,33 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
     }
     // MARK: - Functions
     private func setupUI() {
+        // style
         view.backgroundColor = UIColor(named: "mainOrange")
-        
+        // subviews
         view.addSubview(logoImageView)
-        logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-        logoImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30).isActive = true
-        
         view.addSubview(foodLabel)
-        foodLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10).isActive = true
-        foodLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30).isActive = true
-        foodLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        
         view.addSubview(toyImageView)
-        toyImageView.topAnchor.constraint(equalTo: foodLabel.bottomAnchor, constant: 20).isActive = true
-        toyImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        toyImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
         view.addSubview(getStartedButton)
-        getStartedButton.topAnchor.constraint(equalTo: toyImageView.bottomAnchor, constant: 10).isActive = true
-        getStartedButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30).isActive = true
-        getStartedButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
-        getStartedButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+        // constraints
+        NSLayoutConstraint.activate([
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            logoImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30)
+        ])
+        NSLayoutConstraint.activate([
+            foodLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 10),
+            foodLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
+            foodLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ])
+        NSLayoutConstraint.activate([
+            toyImageView.topAnchor.constraint(equalTo: foodLabel.bottomAnchor, constant: 20),
+            toyImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            toyImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        NSLayoutConstraint.activate([
+            getStartedButton.topAnchor.constraint(equalTo: toyImageView.bottomAnchor, constant: 10),
+            getStartedButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
+            getStartedButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
+            getStartedButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
+        ])
     }
 }

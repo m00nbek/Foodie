@@ -29,8 +29,9 @@ class RegisterView: UIView {
     private func setupUI() {
         // style
         backgroundColor = .systemGray5
-        // constraints
+        // subviews
         addSubview(label)
+        // constraints
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: centerXAnchor),
             label.centerYAnchor.constraint(equalTo: centerYAnchor)
