@@ -25,6 +25,7 @@
 		AB97D00126C273B8008F9D39 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97D00026C273B8008F9D39 /* AuthenticationViewController.swift */; };
 		AB97D00426C27ACE008F9D39 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97D00226C27ACE008F9D39 /* RegisterView.swift */; };
 		AB97D00526C27ACE008F9D39 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97D00326C27ACE008F9D39 /* LoginView.swift */; };
+		ABCA270826C3A04F00144ED7 /* FormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA270726C3A04F00144ED7 /* FormFieldView.swift */; };
 		ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE4C45626B1810500DBDCA4 /* AppDelegate.swift */; };
 		ABE4C45926B1810500DBDCA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE4C45826B1810500DBDCA4 /* SceneDelegate.swift */; };
 		ABE4C46026B1810600DBDCA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE4C45F26B1810600DBDCA4 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		AB97D00026C273B8008F9D39 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		AB97D00226C27ACE008F9D39 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		AB97D00326C27ACE008F9D39 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		ABCA270726C3A04F00144ED7 /* FormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldView.swift; sourceTree = "<group>"; };
 		ABE4C45326B1810500DBDCA4 /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE4C45626B1810500DBDCA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE4C45826B1810500DBDCA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				AB97D00026C273B8008F9D39 /* AuthenticationViewController.swift */,
 				AB97D00326C27ACE008F9D39 /* LoginView.swift */,
 				AB97D00226C27ACE008F9D39 /* RegisterView.swift */,
+				ABCA270726C3A04F00144ED7 /* FormFieldView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				AB139B9D26C105AD00D5A514 /* RootPresenter.swift in Sources */,
 				AB97D00526C27ACE008F9D39 /* LoginView.swift in Sources */,
 				ABE4C45926B1810500DBDCA4 /* SceneDelegate.swift in Sources */,
+				ABCA270826C3A04F00144ED7 /* FormFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

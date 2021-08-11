@@ -110,7 +110,6 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
             self.scrollToView(self.registerView)
         }.startAnimation()
     }
-    // MARK: - Selectors
     // MARK: - Functions
     private func setupUI() {
         view.backgroundColor = .white
