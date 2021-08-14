@@ -174,9 +174,11 @@ extension FormFieldView {
 
 // MARK: - TextFieldDelegate
 extension FormFieldView: UITextFieldDelegate {
-    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        enterEmailAnimation()
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.endEditing(true)
+        delegate?.textFieldShouldReturn(textView: self)
         return true
     }
     
@@ -282,5 +284,6 @@ func isValidEmail(_ email: String) -> Bool {
 // MARK: - Protocols
 protocol TextFieldProtocol {
     func textFieldDidChangeSelection(_ textField: UITextField)
+    func textFieldShouldReturn(textView: FormFieldView)
 }
 

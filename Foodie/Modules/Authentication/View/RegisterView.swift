@@ -17,6 +17,12 @@ class RegisterView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - Properties
+    // TextViews
+    private lazy var fullNameTextView = createTextView(with: "Full Name", for: self)
+    private lazy var emailTextView = createTextView(with: "Email", for: self)
+    private lazy var passwordTextView = createTextView(with: "Password", for: self)
+    private lazy var addressTextView = createTextView(with: "Address", for: self)
+    
     // MARK: - Functions
     private func setupUI() {
         // style
@@ -27,27 +33,7 @@ class RegisterView: UIView {
         // constraints
     }
     private func setupTextViews() {
-        let nameTextView = FormFieldView()
-        nameTextView.textFieldName = "Full Name"
-        nameTextView.delegate = self
-        nameTextView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let emailTextView = FormFieldView()
-        emailTextView.textFieldName = "Email"
-        emailTextView.delegate = self
-        emailTextView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let passwordTextView = FormFieldView()
-        passwordTextView.textFieldName = "Password"
-        passwordTextView.delegate = self
-        passwordTextView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let addressTextView = FormFieldView()
-        addressTextView.textFieldName = "Address"
-        addressTextView.delegate = self
-        addressTextView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let stack = UIStackView(arrangedSubviews: [nameTextView, emailTextView, passwordTextView])
+        let stack = UIStackView(arrangedSubviews: [fullNameTextView, emailTextView, passwordTextView, addressTextView])
         stack.axis = .vertical
         stack.distribution = .fillEqually
         stack.spacing = 10
@@ -58,11 +44,29 @@ class RegisterView: UIView {
         stack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         stack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
     }
+    private func createTextView(with name: String, for view: TextFieldProtocol) -> FormFieldView {
+        let textView = FormFieldView()
+        textView.delegate = view
+        textView.textFieldName = name
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
+    }
 }
-// MARK: -
+// MARK: - TextFieldProtocol
 extension RegisterView: TextFieldProtocol {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        print(textField.text)
     }
-    
+    func textFieldShouldReturn(textView: FormFieldView) {
+        switch textView {
+        case fullNameTextView:
+            emailTextView.textField.becomeFirstResponder()
+        case emailTextView:
+            passwordTextView.textField.becomeFirstResponder()
+        case passwordTextView:
+            addressTextView.textField.becomeFirstResponder()
+        default:
+            // register button becomeFirstResponder
+            print("button becomeFirstResponder")
+        }
+    }
 }
