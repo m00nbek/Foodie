@@ -17,12 +17,12 @@ class RegisterView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - Properties
+    var animationDelegate: Animation?
     // TextViews
     private lazy var fullNameTextView = createTextView(with: "Full Name", for: self)
     private lazy var emailTextView = createTextView(with: "Email", for: self)
     private lazy var passwordTextView = createTextView(with: "Password", for: self)
     private lazy var addressTextView = createTextView(with: "Address", for: self)
-    
     // MARK: - Functions
     private func setupUI() {
         // style
@@ -59,6 +59,7 @@ extension RegisterView: TextFieldProtocol {
     func textFieldShouldReturn(textView: FormFieldView) {
         switch textView {
         case fullNameTextView:
+            animationDelegate?.changeHeight(percent: 80)
             emailTextView.textField.becomeFirstResponder()
         case emailTextView:
             passwordTextView.textField.becomeFirstResponder()

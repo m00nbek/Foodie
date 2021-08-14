@@ -92,8 +92,12 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
-    private let loginView = LoginView()
-    private let registerView = RegisterView()
+    private lazy var loginView = LoginView()
+    private lazy var registerView: UIView = {
+        let view = RegisterView()
+        view.animationDelegate = self
+        return view
+    }()
     private lazy var views = [loginView, registerView]
     // MARK: - Selectors
     @objc private func loginTapped() {
@@ -165,4 +169,16 @@ extension AuthenticationViewController: UIScrollViewDelegate {
         }
     }
 }
-
+// MARK: - Animation
+extension AuthenticationViewController: Animation {
+    func changeHeight(percent: Double) {
+//        UIView.animate(withDuration: 0.3, delay: 0, options: .layoutSubviews) {
+//        }
+        print("hi")
+        self.sixtyPercentHeight = (percent/100) * self.view.frame.height
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(views.count), height: sixtyPercentHeight)
+    }
+}
+protocol Animation {
+    func changeHeight(percent: Double)
+}
