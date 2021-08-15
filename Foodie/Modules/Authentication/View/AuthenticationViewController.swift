@@ -57,6 +57,12 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    private lazy var scrollViewHeight: NSLayoutConstraint = scrollView.heightAnchor.constraint(equalToConstant: sixtyPercentHeight)
+    private lazy var sixtyPercentHeight = (60/100) * view.frame.height {
+        didSet {
+            view.layoutIfNeeded()
+        }
+    }
     private lazy var buttonStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [loginButton, signUpButton])
         stack.axis = .horizontal
@@ -73,14 +79,14 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         stack.backgroundColor = .white
         return stack
     }()
-    private lazy var sixtyPercentHeight = (60/100) * view.frame.height
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.isPagingEnabled = true
         scrollView.bounces = false
-        scrollView.alwaysBounceVertical = false
+        scrollView.alwaysBounceVertical = true
+        scrollView.alwaysBounceHorizontal = false
         
         scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(views.count), height: sixtyPercentHeight)
         
@@ -126,7 +132,6 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         view.addSubview(buttonStack)
         // logoImageView constraints
         NSLayoutConstraint.activate([
-            logoImageView.heightAnchor.constraint(equalToConstant: (view.frame.height/4) - 50),
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             logoImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             logoImageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
@@ -134,12 +139,13 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         // buttonStack constraints
         NSLayoutConstraint.activate([
             buttonStack.heightAnchor.constraint(equalToConstant: 50),
+            buttonStack.topAnchor.constraint(equalTo: logoImageView.bottomAnchor),
             buttonStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             buttonStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
         // scrollView constraints
         NSLayoutConstraint.activate([
-            scrollView.heightAnchor.constraint(equalToConstant: sixtyPercentHeight),
+            scrollViewHeight,
             scrollView.topAnchor.constraint(equalTo: buttonStack.bottomAnchor, constant: -30),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -174,9 +180,20 @@ extension AuthenticationViewController: Animation {
     func changeHeight(percent: Double) {
 //        UIView.animate(withDuration: 0.3, delay: 0, options: .layoutSubviews) {
 //        }
-        print("hi")
-        self.sixtyPercentHeight = (percent/100) * self.view.frame.height
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(views.count), height: sixtyPercentHeight)
+        
+        self.sixtyPercentHeight = ((percent/100) * self.view.frame.height)
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(views.count), height: sixtyPercentHeight + 100)
+        for i in 0..<views.count {
+            views[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: sixtyPercentHeight + 100)
+        }
+        
+        self.scrollViewHeight.isActive = false
+        self.scrollViewHeight = self.scrollView.heightAnchor.constraint(equalToConstant: self.sixtyPercentHeight)
+        self.scrollViewHeight.isActive = true
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
 protocol Animation {

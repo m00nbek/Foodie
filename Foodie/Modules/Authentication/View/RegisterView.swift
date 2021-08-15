@@ -59,13 +59,14 @@ extension RegisterView: TextFieldProtocol {
     func textFieldShouldReturn(textView: FormFieldView) {
         switch textView {
         case fullNameTextView:
-            animationDelegate?.changeHeight(percent: 80)
+            animationDelegate?.changeHeight(percent: 70)
             emailTextView.textField.becomeFirstResponder()
         case emailTextView:
             passwordTextView.textField.becomeFirstResponder()
         case passwordTextView:
             addressTextView.textField.becomeFirstResponder()
         default:
+            animationDelegate?.changeHeight(percent: 60)
             // register button becomeFirstResponder
             print("button becomeFirstResponder")
         }
