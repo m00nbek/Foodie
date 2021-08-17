@@ -7,100 +7,104 @@
 
 import UIKit
 
-private struct Local {
-    static let height: CGFloat = 60
-    static let tintColorValid: UIColor = .systemGreen
-    static let tintColorInValid: UIColor = .systemRed
-    static let backgroundColor: UIColor = .white
-    static let foregroundColor: UIColor = .systemGray
-}
-
 class FormFieldView: UIView {
-    
-    var textFieldName: String? {
-        didSet {
-            setup()
-            style()
-            layout()
+    // MARK: - Properties
+    typealias TextFieldType = ValidationCase
+    var textFieldType: TextFieldType
+    var textFieldName: String {
+        switch textFieldType {
+        case .email:
+            return "Email"
+        case .username:
+            return "Username"
+        case .password:
+            return "Password"
+        case .fullName:
+            return "Full Name"
+        case .address:
+            return "Address"
+        case .phone:
+            return "Phone"
         }
     }
-    var delegate: TextFieldProtocol?
+    let validator = ValidationService()
+    var delegate: TextFieldProtocol
     let label = UILabel()
     let invalidLabel = UILabel()
     
     let textField = UITextField()
     let cancelButton = makeSymbolButton(systemName: "clear.fill", target: self, selector: #selector(cancelTapped(_:)))
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    // MARK: - Lifecycle
+    required init(textFieldType: TextFieldType, delegate: TextFieldProtocol) {
+        self.textFieldType = textFieldType
+        self.delegate = delegate
+        super.init(frame: .zero)
+        setup()
+        style()
+        layout()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIView.noIntrinsicMetric, height: Local.height)
+        return CGSize(width: UIView.noIntrinsicMetric, height: TextFieldProperties.height)
     }
 }
-
+// MARK: - UI Functions
 extension FormFieldView {
-    
     func setup() {
         textField.delegate = self
     }
-    
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = Local.backgroundColor
-        layer.cornerRadius = Local.height / 4
+        backgroundColor = TextFieldProperties.backgroundColor
+        layer.cornerRadius = TextFieldProperties.height / 4
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor
         
         // label
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemGray
-        label.text = textFieldName!
+        label.text = textFieldName
         
         // invalid
         invalidLabel.translatesAutoresizingMaskIntoConstraints = false
-        invalidLabel.textColor = Local.tintColorInValid
-        invalidLabel.text = "\(textFieldName!) is invalid"
-        invalidLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
+        invalidLabel.textColor = TextFieldProperties.tintColorInValid
+        invalidLabel.text = "\(textFieldName) is invalid"
+        invalidLabel.font = .preferredFont(forTextStyle: .caption1)
         invalidLabel.isHidden = true
         
         // textfield
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textColor = .black
-        textField.tintColor = Local.tintColorValid
+        textField.tintColor = TextFieldProperties.tintColorValid
         textField.isHidden = true
-        switch textFieldName! {
-        case "Full Name":
-            textField.textContentType = .name
-        case "Email":
+        switch textFieldType {
+        case .email:
             textField.textContentType = .emailAddress
-        case "Address":
+        case .username:
+            textField.textContentType = .username
+        case .password:
+            textField.textContentType = .password
+            textField.isSecureTextEntry = true
+        case .fullName:
+            textField.textContentType = .name
+        case .address:
             textField.textContentType = .fullStreetAddress
-        case "Phone":
+        case .phone:
             textField.text = "+"
             textField.textContentType = .telephoneNumber
             textField.keyboardType = .numberPad
-        case "Password":
-            textField.textContentType = .password
-            textField.isSecureTextEntry = true
-        default:
-            print("Unknown textField")
         }
-        
         // button
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
-        cancelButton.imageView?.tintColor = Local.foregroundColor
+        cancelButton.imageView?.tintColor = TextFieldProperties.foregroundColor
         cancelButton.isHidden = true
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(_: )))
         addGestureRecognizer(tap)
     }
-    
     func layout() {
         addSubview(label)
         addSubview(invalidLabel)
@@ -111,45 +115,36 @@ extension FormFieldView {
             // label
             label.centerYAnchor.constraint(equalTo: centerYAnchor),
             label.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
-            
             // invalidLabel
             invalidLabel.topAnchor.constraint(equalTo: topAnchor, constant: 6),
             invalidLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
-            
             // textfield
             textField.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             trailingAnchor.constraint(equalToSystemSpacingAfter: textField.trailingAnchor, multiplier: 2),
             bottomAnchor.constraint(equalToSystemSpacingBelow: textField.bottomAnchor, multiplier: 2),
-            
             // button
             cancelButton.centerYAnchor.constraint(equalTo: centerYAnchor),
             trailingAnchor.constraint(equalToSystemSpacingAfter: cancelButton.trailingAnchor, multiplier: 2),
         ])
     }
-    
-    
     @objc func tapped(_ recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizer.State.ended) {
-            enterEmailAnimation()
+            animteTextField()
         }
     }
 }
-
 // MARK: - Animations
-
 extension FormFieldView {
-    
-    func enterEmailAnimation() {
-        
+    func animteTextField() {
         UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.1,
                                                        delay: 0,
                                                        options: []) {
             // style
             self.backgroundColor = .white
-            self.label.textColor = Local.tintColorValid
+            self.label.textColor = TextFieldProperties.tintColorValid
             self.layer.borderWidth = 1
             self.layer.borderColor = self.label.textColor.cgColor
-            self.textField.tintColor = Local.tintColorValid
+            self.textField.tintColor = TextFieldProperties.tintColorValid
             
             // move
             let transpose = CGAffineTransform(translationX: -8, y: -24)
@@ -163,25 +158,30 @@ extension FormFieldView {
             self.cancelButton.isHidden = false
         }
     }
-    
-    func showInvalidMessage() {
-        label.isHidden = true
-        invalidLabel.isHidden = false
-        layer.borderColor = Local.tintColorInValid.cgColor
-        textField.tintColor = Local.tintColorInValid
+    func updateTextField(isValid: Bool) {
+        if isValid {
+            label.isHidden = false
+            invalidLabel.isHidden = true
+            layer.borderColor = TextFieldProperties.tintColorValid.cgColor
+            textField.tintColor = TextFieldProperties.tintColorValid
+        } else {
+            label.isHidden = true
+            invalidLabel.isHidden = false
+            layer.borderColor = TextFieldProperties.tintColorInValid.cgColor
+            textField.tintColor = TextFieldProperties.tintColorInValid
+        }
     }
 }
-
-// MARK: - TextFieldDelegate
+// MARK: - UITextFieldDelegate
 extension FormFieldView: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        enterEmailAnimation()
+        animteTextField()
+        delegate.textFieldDidBeginEditing(textField)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        delegate?.textFieldShouldReturn(textView: self)
+        delegate.textFieldShouldReturn(textView: self)
         return true
     }
-    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             return true
@@ -190,66 +190,39 @@ extension FormFieldView: UITextFieldDelegate {
     }
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let text = textField.text else { return }
-        delegate?.textFieldDidChangeSelection(textField)
-        if !text.isEmpty {
-            if textFieldName! == "Email" {
-                if isValidEmail(text) {
-                    label.isHidden = false
-                    invalidLabel.isHidden = true
-                    layer.borderColor = Local.tintColorValid.cgColor
-                    textField.tintColor = Local.tintColorValid
-                } else {
-                    showInvalidMessage()
-                }
-            } else {
-                if text.count >= 5 {
-                    label.isHidden = false
-                    invalidLabel.isHidden = true
-                    layer.borderColor = Local.tintColorValid.cgColor
-                    textField.tintColor = Local.tintColorValid
-                } else {
-                    showInvalidMessage()
-                }
-            }
-        } else {
-            showInvalidMessage()
+        guard !text.isEmpty else {
+            updateTextField(isValid: false)
             invalidLabel.text = "This field is required!"
+            return
         }
+        validator.validate(textFieldType, for: text) ? updateTextField(isValid: true) : updateTextField(isValid: false)
     }
 }
-
 // MARK: - Actions
-
 extension FormFieldView {
     func undo() {
-        let size = UIViewPropertyAnimator(duration: 0.1, curve: .linear) {
+        UIViewPropertyAnimator(duration: 0.1, curve: .linear) {
             // style
-            self.backgroundColor = Local.backgroundColor
-            self.label.textColor = Local.foregroundColor
+            self.backgroundColor = TextFieldProperties.backgroundColor
+            self.label.textColor = TextFieldProperties.foregroundColor
             self.layer.borderWidth = 1
             self.layer.borderColor = UIColor.black.cgColor
-            
             // visibility
             self.label.isHidden = false
             self.invalidLabel.isHidden = true
             self.textField.isHidden = true
             self.textField.text = ""
             self.cancelButton.isHidden = true
-            
             // move
             self.label.transform = .identity
-        }
-        size.startAnimation()
+        }.startAnimation()
     }
-    
     @objc func cancelTapped(_ sender: UIButton) {
         textField.resignFirstResponder()
         undo()
     }
 }
-
 // MARK: - Factories
-
 func makeSymbolButton(systemName: String, target: Any, selector: Selector) -> UIButton {
     let configuration = UIImage.SymbolConfiguration(scale: .large)
     let image = UIImage(systemName: systemName, withConfiguration: configuration)
@@ -262,28 +235,16 @@ func makeSymbolButton(systemName: String, target: Any, selector: Selector) -> UI
     
     return button
 }
-
-// MARK: Utils
-
-func isValidEmail(_ email: String) -> Bool {
-    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    do {
-        let regex = try NSRegularExpression(pattern: emailRegEx)
-        let nsString = email as NSString
-        let results = regex.matches(in: email, range: NSRange(location: 0, length: nsString.length))
-        if results.count != 0 {
-            return true
-        } else {
-            return false
-        }
-    } catch {
-        fatalError("Regex error: \(error.localizedDescription)")
-    }
-}
-
 // MARK: - Protocols
 protocol TextFieldProtocol {
-    func textFieldDidChangeSelection(_ textField: UITextField)
     func textFieldShouldReturn(textView: FormFieldView)
+    func textFieldDidBeginEditing(_ textField: UITextField)
 }
-
+// MARK: - TextFieldProperties
+private struct TextFieldProperties {
+    static let height: CGFloat = 60
+    static let tintColorValid: UIColor = .systemGreen
+    static let tintColorInValid: UIColor = .systemRed
+    static let backgroundColor: UIColor = .white
+    static let foregroundColor: UIColor = .systemGray
+}
