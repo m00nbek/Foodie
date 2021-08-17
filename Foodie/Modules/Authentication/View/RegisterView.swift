@@ -17,7 +17,6 @@ class RegisterView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - Properties
-    var animationDelegate: Animation?
     // TextViews
     private lazy var fullNameTextView = FormFieldView(textFieldType: .fullName, delegate: self)
     private lazy var emailTextView = FormFieldView(textFieldType: .email, delegate: self)
@@ -48,7 +47,6 @@ class RegisterView: UIView {
 // MARK: - FormFieldDelegate
 extension RegisterView: FormFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        animationDelegate?.changeHeight(percent: 70)
     }
     func textFieldShouldReturn(textView: FormFieldView) {
         switch textView {
@@ -59,7 +57,6 @@ extension RegisterView: FormFieldDelegate {
         case passwordTextView:
             addressTextView.textField.becomeFirstResponder()
         default:
-            animationDelegate?.changeHeight(percent: 60)
             // register button becomeFirstResponder
             print("button becomeFirstResponder")
         }

@@ -12,6 +12,10 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        addKeyboardNotifications()
+    }
+    deinit {
+        removeKeyboardNotifications()
     }
     // MARK: - Properties
     var presenter: AuthenticationPresenterProtocol?
@@ -57,12 +61,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    private lazy var scrollViewHeight: NSLayoutConstraint = scrollView.heightAnchor.constraint(equalToConstant: sixtyPercentHeight)
-    private lazy var sixtyPercentHeight = (60/100) * view.frame.height {
-        didSet {
-            view.layoutIfNeeded()
-        }
-    }
+    private lazy var sixtyPercentHeight = (60/100) * view.frame.height
     private lazy var buttonStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [loginButton, signUpButton])
         stack.axis = .horizontal
@@ -99,11 +98,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         return scrollView
     }()
     private lazy var loginView = LoginView()
-    private lazy var registerView: UIView = {
-        let view = RegisterView()
-        view.animationDelegate = self
-        return view
-    }()
+    private lazy var registerView = RegisterView()
     private lazy var views = [loginView, registerView]
     // MARK: - Selectors
     @objc private func loginTapped() {
@@ -119,6 +114,18 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
             self.signUpBorder.backgroundColor = UIColor(named: "mainOrange")
             self.scrollToView(self.registerView)
         }.startAnimation()
+    }
+    @objc private func keyboardWillChange(notification: Notification) {
+        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification {
+            logoImageView.isHidden = true
+            view.frame.origin.y = -(keyboardRect.height-100)
+        } else {
+            logoImageView.isHidden = false
+            view.frame.origin.y = 0
+        }
     }
     // MARK: - Functions
     private func setupUI() {
@@ -145,11 +152,11 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         ])
         // scrollView constraints
         NSLayoutConstraint.activate([
-            scrollViewHeight,
+            scrollView.heightAnchor.constraint(equalToConstant: sixtyPercentHeight),
             scrollView.topAnchor.constraint(equalTo: buttonStack.bottomAnchor, constant: -30),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
 
     }
@@ -161,8 +168,18 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
             border.bottomAnchor.constraint(equalTo: button.bottomAnchor)
         ])
     }
-    func scrollToView(_ view: UIView) {
+    private func scrollToView(_ view: UIView) {
         scrollView.setContentOffset(CGPoint(x: view.frame.minX, y: view.frame.minY), animated: true)
+    }
+    private func addKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    private func removeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 }
 // MARK: - UIScrollViewDelegate
@@ -174,28 +191,4 @@ extension AuthenticationViewController: UIScrollViewDelegate {
             loginTapped()
         }
     }
-}
-// MARK: - Animation
-extension AuthenticationViewController: Animation {
-    func changeHeight(percent: Double) {
-//        UIView.animate(withDuration: 0.3, delay: 0, options: .layoutSubviews) {
-//        }
-        
-        self.sixtyPercentHeight = ((percent/100) * self.view.frame.height)
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(views.count), height: sixtyPercentHeight + 100)
-        for i in 0..<views.count {
-            views[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: sixtyPercentHeight + 100)
-        }
-        
-        self.scrollViewHeight.isActive = false
-        self.scrollViewHeight = self.scrollView.heightAnchor.constraint(equalToConstant: self.sixtyPercentHeight)
-        self.scrollViewHeight.isActive = true
-        
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-        }
-    }
-}
-protocol Animation {
-    func changeHeight(percent: Double)
 }
