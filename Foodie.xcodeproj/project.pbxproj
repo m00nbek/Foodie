@@ -177,6 +177,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AB968E5C26CBD9D400BAD315 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ABCA270726C3A04F00144ED7 /* FormFieldView.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		AB97CFF226C272CE008F9D39 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,7 +236,6 @@
 				AB97D00026C273B8008F9D39 /* AuthenticationViewController.swift */,
 				AB97D00326C27ACE008F9D39 /* LoginView.swift */,
 				AB97D00226C27ACE008F9D39 /* RegisterView.swift */,
-				ABCA270726C3A04F00144ED7 /* FormFieldView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +261,7 @@
 			children = (
 				ABE4C46A26B1844400DBDCA4 /* Modules */,
 				ABE4C46B26B1851F00DBDCA4 /* Supporting files */,
+				AB968E5C26CBD9D400BAD315 /* Utilities */,
 				ABE4C45F26B1810600DBDCA4 /* Assets.xcassets */,
 				ABE4C46426B1810600DBDCA4 /* Info.plist */,
 			);
