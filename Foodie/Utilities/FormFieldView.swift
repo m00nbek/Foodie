@@ -28,7 +28,7 @@ class FormFieldView: UIView {
         }
     }
     let validator = ValidationService()
-    var delegate: TextFieldProtocol
+    var delegate: FormFieldDelegate
     let label = UILabel()
     let invalidLabel = UILabel()
     
@@ -36,7 +36,7 @@ class FormFieldView: UIView {
     let cancelButton = makeSymbolButton(systemName: "clear.fill", target: self, selector: #selector(cancelTapped(_:)))
     
     // MARK: - Lifecycle
-    required init(textFieldType: TextFieldType, delegate: TextFieldProtocol) {
+    required init(textFieldType: TextFieldType, delegate: FormFieldDelegate) {
         self.textFieldType = textFieldType
         self.delegate = delegate
         super.init(frame: .zero)
@@ -235,8 +235,8 @@ func makeSymbolButton(systemName: String, target: Any, selector: Selector) -> UI
     
     return button
 }
-// MARK: - Protocols
-protocol TextFieldProtocol {
+// MARK: - Delegate
+protocol FormFieldDelegate {
     func textFieldShouldReturn(textView: FormFieldView)
     func textFieldDidBeginEditing(_ textField: UITextField)
 }

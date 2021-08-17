@@ -45,8 +45,8 @@ class RegisterView: UIView {
         stack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
     }
 }
-// MARK: - TextFieldProtocol
-extension RegisterView: TextFieldProtocol {
+// MARK: - FormFieldDelegate
+extension RegisterView: FormFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         animationDelegate?.changeHeight(percent: 70)
     }
