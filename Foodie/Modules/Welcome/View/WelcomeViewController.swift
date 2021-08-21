@@ -24,8 +24,8 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
         let gradient = CAGradientLayer()
         gradient.startPoint = .init(x: 0.5, y: 0.5)
         gradient.colors = [UIColor.clear.cgColor,
-                           UIColor(named: "gradientOrange")!.cgColor,
-                           UIColor(named: "mainOrange")!.cgColor]
+                           Constants.gradientOrange!.cgColor,
+                           Constants.mainOrange!.cgColor]
         return gradient
     }()
     private let logoImageView: UIImageView = {
@@ -59,7 +59,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
     private let getStartedButton: UIButton = {
         let button = UIButton()
         button.setTitle("Get started", for: .normal)
-        button.setTitleColor(UIColor(named: "mainOrange"), for: .normal)
+        button.setTitleColor(Constants.mainOrange, for: .normal)
         button.backgroundColor = .white
         button.layer.cornerRadius = 25
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
@@ -76,7 +76,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
     // MARK: - Functions
     private func setupUI() {
         // style
-        view.backgroundColor = UIColor(named: "mainOrange")
+        view.backgroundColor = Constants.mainOrange
         // subviews
         view.addSubview(logoImageView)
         view.addSubview(foodLabel)
