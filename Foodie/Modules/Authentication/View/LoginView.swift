@@ -17,25 +17,60 @@ class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - Properties
-    private let label: UILabel = {
-        let label = UILabel()
-        label.text = "Login"
-        label.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        label.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    // TextViews
+    private lazy var emailTextView = FormFieldView(textFieldType: .email, delegate: self)
+    private lazy var passwordTextView = FormFieldView(textFieldType: .password, delegate: self)
+    private let loginButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Login", for: .normal)
+        button.titleLabel?.textColor = .white
+        button.backgroundColor = Constants.mainOrange
+        button.layer.cornerRadius = 60 / 2
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     // MARK: - Functions
     private func setupUI() {
         // style
         backgroundColor = .systemGray5
+        // setup text views
+        let textViewStack = setupTextViews()
         // subviews
-        addSubview(label)
+        addSubview(textViewStack)
+        addSubview(loginButton)
         // constraints
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: centerYAnchor)
+            textViewStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 80),
+            textViewStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            textViewStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
+        NSLayoutConstraint.activate([
+            loginButton.heightAnchor.constraint(equalToConstant: 60),
+            loginButton.topAnchor.constraint(equalTo: textViewStack.bottomAnchor, constant: 200),
+            loginButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            loginButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+//            loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
+        ])
+    }
+    private func setupTextViews() -> UIStackView {
+        let stack = UIStackView(arrangedSubviews: [emailTextView, passwordTextView])
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.spacing = 10
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }
+}
+// MARK: - FormFieldDelegate
+extension LoginView: FormFieldDelegate {
+    func textFieldShouldReturn(textView: FormFieldView) {
+        switch textView {
+        case emailTextView:
+            passwordTextView.textField.becomeFirstResponder()
+        default:
+            passwordTextView.textField.resignFirstResponder()
+            loginButton.becomeFirstResponder()
+        }
     }
 }
 

@@ -61,7 +61,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    private lazy var sixtyPercentHeight = (60/100) * view.frame.height
+    private lazy var sixtyPercentHeight = ((60/100) * view.frame.height) - 30
     private lazy var buttonStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [loginButton, signUpButton])
         stack.axis = .horizontal
