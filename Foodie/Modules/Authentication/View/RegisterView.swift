@@ -26,7 +26,7 @@ class RegisterView: UIView {
         let button = UIButton()
         button.setTitle("Register", for: .normal)
         button.titleLabel?.textColor = .white
-        button.backgroundColor = UIColor(named: "mainOrange")
+        button.backgroundColor = Constants.mainOrange
         button.layer.cornerRadius = 60 / 2
         button.translatesAutoresizingMaskIntoConstraints = false
         return button

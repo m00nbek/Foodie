@@ -21,7 +21,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
     var presenter: AuthenticationPresenterProtocol?
     private let loginBorder: UIView = {
         let loginBorder = UIView()
-        loginBorder.backgroundColor = UIColor(named: "mainOrange")
+        loginBorder.backgroundColor = Constants.mainOrange
         loginBorder.translatesAutoresizingMaskIntoConstraints = false
         return loginBorder
     }()
@@ -103,7 +103,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
     // MARK: - Selectors
     @objc private func loginTapped() {
         UIViewPropertyAnimator.init(duration: 0.3, curve: .linear) {
-            self.loginBorder.backgroundColor = UIColor(named: "mainOrange")
+            self.loginBorder.backgroundColor = Constants.mainOrange
             self.signUpBorder.backgroundColor = .clear
             self.scrollToView(self.loginView)
         }.startAnimation()
@@ -111,7 +111,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
     @objc private func signUpTapped() {
         UIViewPropertyAnimator.init(duration: 0.3, curve: .linear) {
             self.loginBorder.backgroundColor = .clear
-            self.signUpBorder.backgroundColor = UIColor(named: "mainOrange")
+            self.signUpBorder.backgroundColor = Constants.mainOrange
             self.scrollToView(self.registerView)
         }.startAnimation()
     }

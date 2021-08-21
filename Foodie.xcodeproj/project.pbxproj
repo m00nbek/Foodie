@@ -18,6 +18,7 @@
 		AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAB26C132B000D5A514 /* WelcomeInteractor.swift */; };
 		AB139BAE26C132BA00D5A514 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAD26C132BA00D5A514 /* WelcomePresenter.swift */; };
 		AB139BB026C1332800D5A514 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAF26C1332800D5A514 /* WelcomeRouter.swift */; };
+		AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50FDF926D0FE580021A323 /* Constants.swift */; };
 		AB968E5B26CBC1DF00BAD315 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */; };
 		AB97CFF926C27303008F9D39 /* AuthenticationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */; };
 		AB97CFFB26C2734D008F9D39 /* AuthenticationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFFA26C2734D008F9D39 /* AuthenticationRouter.swift */; };
@@ -45,6 +46,7 @@
 		AB139BAB26C132B000D5A514 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		AB139BAD26C132BA00D5A514 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		AB139BAF26C1332800D5A514 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
+		AB50FDF926D0FE580021A323 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocols.swift; sourceTree = "<group>"; };
 		AB97CFFA26C2734D008F9D39 /* AuthenticationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRouter.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				ABCA270726C3A04F00144ED7 /* FormFieldView.swift */,
+				AB50FDF926D0FE580021A323 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				AB97CFFB26C2734D008F9D39 /* AuthenticationRouter.swift in Sources */,
 				AB97D00126C273B8008F9D39 /* AuthenticationViewController.swift in Sources */,
 				AB139BAA26C132A700D5A514 /* WelcomeViewController.swift in Sources */,
+				AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */,
 				AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */,
 				ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */,
 				AB97D00426C27ACE008F9D39 /* RegisterView.swift in Sources */,
