@@ -176,7 +176,6 @@ extension FormFieldView {
 extension FormFieldView: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         animteTextField()
-        delegate.textFieldDidBeginEditing(textField)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         delegate.textFieldShouldReturn(textView: self)
@@ -238,7 +237,6 @@ func makeSymbolButton(systemName: String, target: Any, selector: Selector) -> UI
 // MARK: - Delegate
 protocol FormFieldDelegate {
     func textFieldShouldReturn(textView: FormFieldView)
-    func textFieldDidBeginEditing(_ textField: UITextField)
 }
 // MARK: - TextFieldProperties
 private struct TextFieldProperties {

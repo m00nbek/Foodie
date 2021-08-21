@@ -22,32 +22,48 @@ class RegisterView: UIView {
     private lazy var emailTextView = FormFieldView(textFieldType: .email, delegate: self)
     private lazy var passwordTextView = FormFieldView(textFieldType: .password, delegate: self)
     private lazy var addressTextView = FormFieldView(textFieldType: .address, delegate: self)
+    private let registerButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Register", for: .normal)
+        button.titleLabel?.textColor = .white
+        button.backgroundColor = UIColor(named: "mainOrange")
+        button.layer.cornerRadius = 60 / 2
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     // MARK: - Functions
     private func setupUI() {
         // style
         backgroundColor = .systemGray5
         // setup text views
-        setupTextViews()
+        let textViewStack = setupTextViews()
         // subviews
+        addSubview(textViewStack)
+        addSubview(registerButton)
         // constraints
+        NSLayoutConstraint.activate([
+            textViewStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 80),
+            textViewStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            textViewStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+        NSLayoutConstraint.activate([
+            registerButton.heightAnchor.constraint(equalToConstant: 60),
+            registerButton.topAnchor.constraint(equalTo: textViewStack.bottomAnchor, constant: 20),
+            registerButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            registerButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
     }
-    private func setupTextViews() {
+    private func setupTextViews() -> UIStackView {
         let stack = UIStackView(arrangedSubviews: [fullNameTextView, emailTextView, passwordTextView, addressTextView])
         stack.axis = .vertical
         stack.distribution = .fillEqually
         stack.spacing = 10
         stack.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(stack)
-        stack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 80).isActive = true
-        stack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        stack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
+        return stack
     }
 }
 // MARK: - FormFieldDelegate
 extension RegisterView: FormFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-    }
     func textFieldShouldReturn(textView: FormFieldView) {
         switch textView {
         case fullNameTextView:
@@ -57,8 +73,8 @@ extension RegisterView: FormFieldDelegate {
         case passwordTextView:
             addressTextView.textField.becomeFirstResponder()
         default:
-            // register button becomeFirstResponder
-            print("button becomeFirstResponder")
+            addressTextView.textField.resignFirstResponder()
+            registerButton.becomeFirstResponder()
         }
     }
 }
