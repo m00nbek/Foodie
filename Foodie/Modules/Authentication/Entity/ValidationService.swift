@@ -36,7 +36,7 @@ struct ValidationService {
         case .address:
             return text.count >= 5 && text.count <= 30
         case .phone:
-            return text.count == 13
+            return text.count == 13 && !text.contains(" ")
         }
     }
 }

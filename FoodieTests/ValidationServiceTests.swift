@@ -43,4 +43,8 @@ class ValidationServiceTests: XCTestCase {
         XCTAssertFalse(validation.validate(.address, for: "Tash"))
         XCTAssertFalse(validation.validate(.address, for: "Really long long long adddresss blablablablaablablablalba"))
     }
+    func test_validate_phone() throws {
+        XCTAssertTrue(validation.validate(.phone, for: "+998901234567"))
+        XCTAssertFalse(validation.validate(.phone, for: "+99890123456 "))
+    }
 }
