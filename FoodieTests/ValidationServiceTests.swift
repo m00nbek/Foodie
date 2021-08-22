@@ -26,13 +26,16 @@ class ValidationServiceTests: XCTestCase {
     func test_validate_username() throws {
         XCTAssertTrue(validation.validate(.username, for: "m00nbek"))
         XCTAssertFalse(validation.validate(.username, for: "m0"))
+        XCTAssertFalse(validation.validate(.username, for: "reallylonglongusername"))
     }
     func test_validate_password() throws {
         XCTAssertTrue(validation.validate(.password, for: "password"))
         XCTAssertFalse(validation.validate(.password, for: "m0 n"))
+        XCTAssertFalse(validation.validate(.password, for: "reallylonglongpassword"))
     }
     func test_validate_fullName() throws {
         XCTAssertTrue(validation.validate(.fullName, for: "John Doe"))
+        XCTAssertFalse(validation.validate(.fullName, for: "Jo"))
         XCTAssertFalse(validation.validate(.fullName, for: "blablablablablablablabla"))
     }
     func test_validate_address() throws {
