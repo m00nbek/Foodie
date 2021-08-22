@@ -19,22 +19,20 @@ class ValidationServiceTests: XCTestCase {
         super.tearDown()
         validation = nil
     }
-    func test_is_valid_email() throws {
+    func test_validate_email() throws {
         XCTAssertTrue(validation.validate(.email, for: "some@idk.com"))
-    }
-    func test_is_not_valid_email() throws {
         XCTAssertFalse(validation.validate(.email, for: "wrongemail"))
     }
-    func test_is_valid_username() throws {
+    func test_validate_username() throws {
         XCTAssertTrue(validation.validate(.username, for: "m00nbek"))
+        XCTAssertFalse(validation.validate(.username, for: "m0"))
     }
-    func test_is_not_valid_username() throws {
-        XCTAssertFalse(validation.validate(.email, for: "m0"))
-    }
-    func test_is_valid_password() throws {
+    func test_validate_password() throws {
         XCTAssertTrue(validation.validate(.password, for: "password"))
+        XCTAssertFalse(validation.validate(.password, for: "m0 n"))
     }
-    func test_is_not_valid_password() throws {
-        XCTAssertFalse(validation.validate(.email, for: "m0 n"))
+    func test_validate_fullName() throws {
+        XCTAssertTrue(validation.validate(.fullName, for: "John Doe"))
+        XCTAssertFalse(validation.validate(.fullName, for: "blablablablablablablabla"))
     }
 }
