@@ -35,4 +35,9 @@ class ValidationServiceTests: XCTestCase {
         XCTAssertTrue(validation.validate(.fullName, for: "John Doe"))
         XCTAssertFalse(validation.validate(.fullName, for: "blablablablablablablabla"))
     }
+    func test_validate_address() throws {
+        XCTAssertTrue(validation.validate(.address, for: "Tashkent, Uzbekistan"))
+        XCTAssertFalse(validation.validate(.address, for: "Tash"))
+        XCTAssertFalse(validation.validate(.address, for: "Really long long long adddresss blablablablaablablablalba"))
+    }
 }
