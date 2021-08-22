@@ -31,4 +31,10 @@ class ValidationServiceTests: XCTestCase {
     func test_is_not_valid_username() throws {
         XCTAssertFalse(validation.validate(.email, for: "m0"))
     }
+    func test_is_valid_password() throws {
+        XCTAssertTrue(validation.validate(.password, for: "password"))
+    }
+    func test_is_not_valid_password() throws {
+        XCTAssertFalse(validation.validate(.email, for: "m0 n"))
+    }
 }
