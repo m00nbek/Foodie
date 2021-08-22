@@ -25,4 +25,10 @@ class ValidationServiceTests: XCTestCase {
     func test_is_not_valid_email() throws {
         XCTAssertFalse(validation.validate(.email, for: "wrongemail"))
     }
+    func test_is_valid_username() throws {
+        XCTAssertTrue(validation.validate(.username, for: "m00nbek"))
+    }
+    func test_is_not_valid_username() throws {
+        XCTAssertFalse(validation.validate(.email, for: "m0"))
+    }
 }
