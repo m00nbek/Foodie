@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5076AACC7381650D1164EECF /* Pods_FoodieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5603FA9E9DBEF41B239147 /* Pods_FoodieTests.framework */; };
 		AB139B9226C0FFB700D5A514 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139B9126C0FFB700D5A514 /* RootTabBarController.swift */; };
 		AB139B9426C0FFC400D5A514 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139B9326C0FFC400D5A514 /* RootRouter.swift */; };
 		AB139B9B26C1001000D5A514 /* RootProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139B9A26C1001000D5A514 /* RootProtocols.swift */; };
@@ -34,6 +35,7 @@
 		ABE4C45926B1810500DBDCA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE4C45826B1810500DBDCA4 /* SceneDelegate.swift */; };
 		ABE4C46026B1810600DBDCA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE4C45F26B1810600DBDCA4 /* Assets.xcassets */; };
 		ABE4C46326B1810600DBDCA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE4C46126B1810600DBDCA4 /* LaunchScreen.storyboard */; };
+		FBCCB70B0FB27110011D84A8 /* Pods_Foodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44411F23D4C22A9E1BB06774 /* Pods_Foodie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11139549DD11440EC1411996 /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
+		44411F23D4C22A9E1BB06774 /* Pods_Foodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50A0027C1A2E62D4AFEA1631 /* Pods-FoodieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodieTests.release.xcconfig"; path = "Target Support Files/Pods-FoodieTests/Pods-FoodieTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB139B9126C0FFB700D5A514 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		AB139B9326C0FFC400D5A514 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		AB139B9A26C1001000D5A514 /* RootProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootProtocols.swift; sourceTree = "<group>"; };
@@ -77,6 +82,9 @@
 		ABE4C45F26B1810600DBDCA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABE4C46226B1810600DBDCA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABE4C46426B1810600DBDCA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD17A94BDEC807A28E7FB92F /* Pods-FoodieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodieTests.debug.xcconfig"; path = "Target Support Files/Pods-FoodieTests/Pods-FoodieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC5603FA9E9DBEF41B239147 /* Pods_FoodieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDDBCE50526073F4953C48A1 /* Pods-Foodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.debug.xcconfig"; path = "Target Support Files/Pods-Foodie/Pods-Foodie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5076AACC7381650D1164EECF /* Pods_FoodieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,12 +100,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBCCB70B0FB27110011D84A8 /* Pods_Foodie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B7E44D679B7B4ECB2B0A09E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44411F23D4C22A9E1BB06774 /* Pods_Foodie.framework */,
+				DC5603FA9E9DBEF41B239147 /* Pods_FoodieTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB139B8F26C0F3A500D5A514 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +299,8 @@
 				ABE4C45526B1810500DBDCA4 /* Foodie */,
 				AB9FEA6D26D221EA00A12829 /* FoodieTests */,
 				ABE4C45426B1810500DBDCA4 /* Products */,
+				F72428D810F35A1199A9D091 /* Pods */,
+				5B7E44D679B7B4ECB2B0A09E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -325,6 +346,18 @@
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
+		F72428D810F35A1199A9D091 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDDBCE50526073F4953C48A1 /* Pods-Foodie.debug.xcconfig */,
+				11139549DD11440EC1411996 /* Pods-Foodie.release.xcconfig */,
+				AD17A94BDEC807A28E7FB92F /* Pods-FoodieTests.debug.xcconfig */,
+				50A0027C1A2E62D4AFEA1631 /* Pods-FoodieTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,6 +365,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB9FEA7426D221EA00A12829 /* Build configuration list for PBXNativeTarget "FoodieTests" */;
 			buildPhases = (
+				807B99EA26DB57ED9E79B7F7 /* [CP] Check Pods Manifest.lock */,
 				AB9FEA6826D221EA00A12829 /* Sources */,
 				AB9FEA6926D221EA00A12829 /* Frameworks */,
 				AB9FEA6A26D221EA00A12829 /* Resources */,
@@ -350,6 +384,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABE4C46726B1810600DBDCA4 /* Build configuration list for PBXNativeTarget "Foodie" */;
 			buildPhases = (
+				4521A9FF17F05A655EBA8DD0 /* [CP] Check Pods Manifest.lock */,
 				ABE4C44F26B1810500DBDCA4 /* Sources */,
 				ABE4C45026B1810500DBDCA4 /* Frameworks */,
 				ABE4C45126B1810500DBDCA4 /* Resources */,
@@ -420,6 +455,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4521A9FF17F05A655EBA8DD0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Foodie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		807B99EA26DB57ED9E79B7F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodieTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AB9FEA6826D221EA00A12829 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -484,6 +566,7 @@
 /* Begin XCBuildConfiguration section */
 		AB9FEA7226D221EA00A12829 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD17A94BDEC807A28E7FB92F /* Pods-FoodieTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -507,6 +590,7 @@
 		};
 		AB9FEA7326D221EA00A12829 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50A0027C1A2E62D4AFEA1631 /* Pods-FoodieTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -646,6 +730,7 @@
 		};
 		ABE4C46826B1810600DBDCA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDDBCE50526073F4953C48A1 /* Pods-Foodie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -673,6 +758,7 @@
 		};
 		ABE4C46926B1810600DBDCA4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11139549DD11440EC1411996 /* Pods-Foodie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
