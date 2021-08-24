@@ -29,6 +29,14 @@ class LoginView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    private let forgotPasscodeButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Forgot passcode?", for: .normal)
+        button.setTitleColor(Constants.mainOrange, for: .normal)
+        button.isUserInteractionEnabled = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     // MARK: - Functions
     private func setupUI() {
         // style
@@ -37,6 +45,7 @@ class LoginView: UIView {
         let textViewStack = setupTextViews()
         // subviews
         addSubview(textViewStack)
+        addSubview(forgotPasscodeButton)
         addSubview(loginButton)
         // constraints
         NSLayoutConstraint.activate([
@@ -45,11 +54,16 @@ class LoginView: UIView {
             textViewStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
         NSLayoutConstraint.activate([
+            forgotPasscodeButton.heightAnchor.constraint(equalToConstant: 20),
+            forgotPasscodeButton.topAnchor.constraint(equalTo: textViewStack.bottomAnchor, constant: 20),
+            forgotPasscodeButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20)
+        ])
+        NSLayoutConstraint.activate([
             loginButton.heightAnchor.constraint(equalToConstant: 60),
-            loginButton.topAnchor.constraint(equalTo: textViewStack.bottomAnchor, constant: 200),
+//            loginButton.topAnchor.constraint(lessThanOrEqualTo: forgotPasscodeButton.bottomAnchor, constant: 60),
             loginButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             loginButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-//            loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -40)
         ])
     }
     private func setupTextViews() -> UIStackView {

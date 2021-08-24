@@ -121,7 +121,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         }
         if notification.name == UIResponder.keyboardWillShowNotification {
             logoImageView.isHidden = true
-            view.frame.origin.y = -(keyboardRect.height-100)
+            view.frame.origin.y = -(keyboardRect.height-50)
         } else {
             logoImageView.isHidden = false
             view.frame.origin.y = 0
