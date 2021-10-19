@@ -24,6 +24,11 @@
 		AB2DB786271E90AC00D150EC /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB785271E90AC00D150EC /* HomeInteractor.swift */; };
 		AB2DB788271E90B300D150EC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB787271E90B300D150EC /* HomePresenter.swift */; };
 		AB2DB78A271E90BE00D150EC /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB789271E90BE00D150EC /* HomeRouter.swift */; };
+		AB2DB790271E938800D150EC /* WishlistProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB78F271E938800D150EC /* WishlistProtocols.swift */; };
+		AB2DB793271E93DC00D150EC /* WishlistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB792271E93DC00D150EC /* WishlistRouter.swift */; };
+		AB2DB795271E940100D150EC /* WishlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB794271E940100D150EC /* WishlistPresenter.swift */; };
+		AB2DB797271E941A00D150EC /* WishlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB796271E941A00D150EC /* WishlistInteractor.swift */; };
+		AB2DB799271E943C00D150EC /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB798271E943C00D150EC /* WishlistView.swift */; };
 		AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50FDF926D0FE580021A323 /* Constants.swift */; };
 		AB968E5B26CBC1DF00BAD315 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */; };
 		AB97CFF926C27303008F9D39 /* AuthenticationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */; };
@@ -73,6 +78,11 @@
 		AB2DB785271E90AC00D150EC /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		AB2DB787271E90B300D150EC /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		AB2DB789271E90BE00D150EC /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		AB2DB78F271E938800D150EC /* WishlistProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistProtocols.swift; sourceTree = "<group>"; };
+		AB2DB792271E93DC00D150EC /* WishlistRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistRouter.swift; sourceTree = "<group>"; };
+		AB2DB794271E940100D150EC /* WishlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistPresenter.swift; sourceTree = "<group>"; };
+		AB2DB796271E941A00D150EC /* WishlistInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistInteractor.swift; sourceTree = "<group>"; };
+		AB2DB798271E943C00D150EC /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
 		AB50FDF926D0FE580021A323 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocols.swift; sourceTree = "<group>"; };
@@ -246,6 +256,12 @@
 		AB2DB778271E8FC300D150EC /* Wishlist */ = {
 			isa = PBXGroup;
 			children = (
+				AB2DB791271E939F00D150EC /* View */,
+				AB2DB78E271E936D00D150EC /* Interactor */,
+				AB2DB78D271E936900D150EC /* Presenter */,
+				AB2DB78C271E935A00D150EC /* Entity */,
+				AB2DB78B271E935600D150EC /* Router */,
+				AB2DB78F271E938800D150EC /* WishlistProtocols.swift */,
 			);
 			path = Wishlist;
 			sourceTree = "<group>";
@@ -310,6 +326,45 @@
 			isa = PBXGroup;
 			children = (
 				AB2DB783271E909F00D150EC /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB2DB78B271E935600D150EC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB792271E93DC00D150EC /* WishlistRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AB2DB78C271E935A00D150EC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AB2DB78D271E936900D150EC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB794271E940100D150EC /* WishlistPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AB2DB78E271E936D00D150EC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB796271E941A00D150EC /* WishlistInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AB2DB791271E939F00D150EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB798271E943C00D150EC /* WishlistView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -612,9 +667,12 @@
 			files = (
 				AB97CFFD26C273A5008F9D39 /* AuthenticationPresenter.swift in Sources */,
 				AB139B9226C0FFB700D5A514 /* RootTabBarController.swift in Sources */,
+				AB2DB795271E940100D150EC /* WishlistPresenter.swift in Sources */,
 				AB139BAE26C132BA00D5A514 /* WelcomePresenter.swift in Sources */,
 				AB97CFFB26C2734D008F9D39 /* AuthenticationRouter.swift in Sources */,
+				AB2DB797271E941A00D150EC /* WishlistInteractor.swift in Sources */,
 				AB2DB782271E908700D150EC /* HomeProtocols.swift in Sources */,
+				AB2DB799271E943C00D150EC /* WishlistView.swift in Sources */,
 				AB97D00126C273B8008F9D39 /* AuthenticationViewController.swift in Sources */,
 				AB139BAA26C132A700D5A514 /* WelcomeViewController.swift in Sources */,
 				AB2DB786271E90AC00D150EC /* HomeInteractor.swift in Sources */,
@@ -628,8 +686,10 @@
 				AB139BA626C1318200D5A514 /* WelcomeProtocols.swift in Sources */,
 				AB139B9B26C1001000D5A514 /* RootProtocols.swift in Sources */,
 				AB97CFFF26C273AF008F9D39 /* AuthenticationInteractor.swift in Sources */,
+				AB2DB790271E938800D150EC /* WishlistProtocols.swift in Sources */,
 				AB139B9426C0FFC400D5A514 /* RootRouter.swift in Sources */,
 				AB139BA826C1319A00D5A514 /* viper.swift in Sources */,
+				AB2DB793271E93DC00D150EC /* WishlistRouter.swift in Sources */,
 				AB139B9F26C105B700D5A514 /* RootInteractor.swift in Sources */,
 				AB2DB784271E909F00D150EC /* HomeViewController.swift in Sources */,
 				AB139B9D26C105AD00D5A514 /* RootPresenter.swift in Sources */,
