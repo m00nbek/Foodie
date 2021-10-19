@@ -29,6 +29,11 @@
 		AB2DB795271E940100D150EC /* WishlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB794271E940100D150EC /* WishlistPresenter.swift */; };
 		AB2DB797271E941A00D150EC /* WishlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB796271E941A00D150EC /* WishlistInteractor.swift */; };
 		AB2DB799271E943C00D150EC /* WishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB798271E943C00D150EC /* WishlistView.swift */; };
+		AB2DB7A0271E965900D150EC /* OrdersProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB79F271E965900D150EC /* OrdersProtocols.swift */; };
+		AB2DB7A2271E968C00D150EC /* OrdersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7A1271E968C00D150EC /* OrdersRouter.swift */; };
+		AB2DB7A4271E96B800D150EC /* OrdersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7A3271E96B800D150EC /* OrdersPresenter.swift */; };
+		AB2DB7A6271E96C800D150EC /* OrdersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7A5271E96C800D150EC /* OrdersInteractor.swift */; };
+		AB2DB7A8271E970600D150EC /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7A7271E970600D150EC /* OrdersViewController.swift */; };
 		AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50FDF926D0FE580021A323 /* Constants.swift */; };
 		AB968E5B26CBC1DF00BAD315 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */; };
 		AB97CFF926C27303008F9D39 /* AuthenticationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */; };
@@ -83,6 +88,11 @@
 		AB2DB794271E940100D150EC /* WishlistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistPresenter.swift; sourceTree = "<group>"; };
 		AB2DB796271E941A00D150EC /* WishlistInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistInteractor.swift; sourceTree = "<group>"; };
 		AB2DB798271E943C00D150EC /* WishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistView.swift; sourceTree = "<group>"; };
+		AB2DB79F271E965900D150EC /* OrdersProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersProtocols.swift; sourceTree = "<group>"; };
+		AB2DB7A1271E968C00D150EC /* OrdersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersRouter.swift; sourceTree = "<group>"; };
+		AB2DB7A3271E96B800D150EC /* OrdersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPresenter.swift; sourceTree = "<group>"; };
+		AB2DB7A5271E96C800D150EC /* OrdersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersInteractor.swift; sourceTree = "<group>"; };
+		AB2DB7A7271E970600D150EC /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		AB50FDF926D0FE580021A323 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocols.swift; sourceTree = "<group>"; };
@@ -269,6 +279,12 @@
 		AB2DB779271E8FC800D150EC /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				AB2DB79E271E964E00D150EC /* View */,
+				AB2DB79D271E964B00D150EC /* Interactor */,
+				AB2DB79C271E964600D150EC /* Presenter */,
+				AB2DB79B271E963F00D150EC /* Entity */,
+				AB2DB79A271E963B00D150EC /* Router */,
+				AB2DB79F271E965900D150EC /* OrdersProtocols.swift */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -365,6 +381,45 @@
 			isa = PBXGroup;
 			children = (
 				AB2DB798271E943C00D150EC /* WishlistView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB2DB79A271E963B00D150EC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB7A1271E968C00D150EC /* OrdersRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AB2DB79B271E963F00D150EC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AB2DB79C271E964600D150EC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB7A3271E96B800D150EC /* OrdersPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AB2DB79D271E964B00D150EC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB7A5271E96C800D150EC /* OrdersInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AB2DB79E271E964E00D150EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB7A7271E970600D150EC /* OrdersViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -676,6 +731,7 @@
 				AB97D00126C273B8008F9D39 /* AuthenticationViewController.swift in Sources */,
 				AB139BAA26C132A700D5A514 /* WelcomeViewController.swift in Sources */,
 				AB2DB786271E90AC00D150EC /* HomeInteractor.swift in Sources */,
+				AB2DB7A8271E970600D150EC /* OrdersViewController.swift in Sources */,
 				AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */,
 				AB2DB78A271E90BE00D150EC /* HomeRouter.swift in Sources */,
 				AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */,
@@ -684,13 +740,17 @@
 				AB97CFF926C27303008F9D39 /* AuthenticationProtocols.swift in Sources */,
 				AB139BB026C1332800D5A514 /* WelcomeRouter.swift in Sources */,
 				AB139BA626C1318200D5A514 /* WelcomeProtocols.swift in Sources */,
+				AB2DB7A2271E968C00D150EC /* OrdersRouter.swift in Sources */,
 				AB139B9B26C1001000D5A514 /* RootProtocols.swift in Sources */,
 				AB97CFFF26C273AF008F9D39 /* AuthenticationInteractor.swift in Sources */,
 				AB2DB790271E938800D150EC /* WishlistProtocols.swift in Sources */,
+				AB2DB7A6271E96C800D150EC /* OrdersInteractor.swift in Sources */,
+				AB2DB7A4271E96B800D150EC /* OrdersPresenter.swift in Sources */,
 				AB139B9426C0FFC400D5A514 /* RootRouter.swift in Sources */,
 				AB139BA826C1319A00D5A514 /* viper.swift in Sources */,
 				AB2DB793271E93DC00D150EC /* WishlistRouter.swift in Sources */,
 				AB139B9F26C105B700D5A514 /* RootInteractor.swift in Sources */,
+				AB2DB7A0271E965900D150EC /* OrdersProtocols.swift in Sources */,
 				AB2DB784271E909F00D150EC /* HomeViewController.swift in Sources */,
 				AB139B9D26C105AD00D5A514 /* RootPresenter.swift in Sources */,
 				AB968E5B26CBC1DF00BAD315 /* ValidationService.swift in Sources */,
