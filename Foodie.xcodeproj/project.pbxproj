@@ -19,6 +19,11 @@
 		AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAB26C132B000D5A514 /* WelcomeInteractor.swift */; };
 		AB139BAE26C132BA00D5A514 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAD26C132BA00D5A514 /* WelcomePresenter.swift */; };
 		AB139BB026C1332800D5A514 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139BAF26C1332800D5A514 /* WelcomeRouter.swift */; };
+		AB2DB782271E908700D150EC /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB781271E908700D150EC /* HomeProtocols.swift */; };
+		AB2DB784271E909F00D150EC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB783271E909F00D150EC /* HomeViewController.swift */; };
+		AB2DB786271E90AC00D150EC /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB785271E90AC00D150EC /* HomeInteractor.swift */; };
+		AB2DB788271E90B300D150EC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB787271E90B300D150EC /* HomePresenter.swift */; };
+		AB2DB78A271E90BE00D150EC /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB789271E90BE00D150EC /* HomeRouter.swift */; };
 		AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50FDF926D0FE580021A323 /* Constants.swift */; };
 		AB968E5B26CBC1DF00BAD315 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */; };
 		AB97CFF926C27303008F9D39 /* AuthenticationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */; };
@@ -63,6 +68,11 @@
 		AB139BAB26C132B000D5A514 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
 		AB139BAD26C132BA00D5A514 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		AB139BAF26C1332800D5A514 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
+		AB2DB781271E908700D150EC /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		AB2DB783271E909F00D150EC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AB2DB785271E90AC00D150EC /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		AB2DB787271E90B300D150EC /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		AB2DB789271E90BE00D150EC /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		AB50FDF926D0FE580021A323 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocols.swift; sourceTree = "<group>"; };
@@ -220,6 +230,90 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AB2DB777271E8F3700D150EC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB780271E906D00D150EC /* View */,
+				AB2DB77F271E906800D150EC /* Interactor */,
+				AB2DB77E271E906400D150EC /* Presenter */,
+				AB2DB77D271E905E00D150EC /* Entity */,
+				AB2DB77C271E905200D150EC /* Router */,
+				AB2DB781271E908700D150EC /* HomeProtocols.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AB2DB778271E8FC300D150EC /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		AB2DB779271E8FC800D150EC /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		AB2DB77A271E8FD400D150EC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		AB2DB77B271E900900D150EC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB777271E8F3700D150EC /* Home */,
+				AB2DB778271E8FC300D150EC /* Wishlist */,
+				AB2DB779271E8FC800D150EC /* Orders */,
+				AB2DB77A271E8FD400D150EC /* Profile */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AB2DB77C271E905200D150EC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB789271E90BE00D150EC /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AB2DB77D271E905E00D150EC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AB2DB77E271E906400D150EC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB787271E90B300D150EC /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AB2DB77F271E906800D150EC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB785271E90AC00D150EC /* HomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AB2DB780271E906D00D150EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB783271E909F00D150EC /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		AB968E5C26CBD9D400BAD315 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +425,7 @@
 				AB139B8F26C0F3A500D5A514 /* Root */,
 				AB139B9026C0F3C900D5A514 /* Welcome */,
 				AB97CFF226C272CE008F9D39 /* Authentication */,
+				AB2DB77B271E900900D150EC /* Main */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -354,7 +449,6 @@
 				AD17A94BDEC807A28E7FB92F /* Pods-FoodieTests.debug.xcconfig */,
 				50A0027C1A2E62D4AFEA1631 /* Pods-FoodieTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -520,9 +614,12 @@
 				AB139B9226C0FFB700D5A514 /* RootTabBarController.swift in Sources */,
 				AB139BAE26C132BA00D5A514 /* WelcomePresenter.swift in Sources */,
 				AB97CFFB26C2734D008F9D39 /* AuthenticationRouter.swift in Sources */,
+				AB2DB782271E908700D150EC /* HomeProtocols.swift in Sources */,
 				AB97D00126C273B8008F9D39 /* AuthenticationViewController.swift in Sources */,
 				AB139BAA26C132A700D5A514 /* WelcomeViewController.swift in Sources */,
+				AB2DB786271E90AC00D150EC /* HomeInteractor.swift in Sources */,
 				AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */,
+				AB2DB78A271E90BE00D150EC /* HomeRouter.swift in Sources */,
 				AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */,
 				ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */,
 				AB97D00426C27ACE008F9D39 /* RegisterView.swift in Sources */,
@@ -534,9 +631,11 @@
 				AB139B9426C0FFC400D5A514 /* RootRouter.swift in Sources */,
 				AB139BA826C1319A00D5A514 /* viper.swift in Sources */,
 				AB139B9F26C105B700D5A514 /* RootInteractor.swift in Sources */,
+				AB2DB784271E909F00D150EC /* HomeViewController.swift in Sources */,
 				AB139B9D26C105AD00D5A514 /* RootPresenter.swift in Sources */,
 				AB968E5B26CBC1DF00BAD315 /* ValidationService.swift in Sources */,
 				AB97D00526C27ACE008F9D39 /* LoginView.swift in Sources */,
+				AB2DB788271E90B300D150EC /* HomePresenter.swift in Sources */,
 				ABE4C45926B1810500DBDCA4 /* SceneDelegate.swift in Sources */,
 				ABCA270826C3A04F00144ED7 /* FormFieldView.swift in Sources */,
 			);
