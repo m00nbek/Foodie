@@ -34,6 +34,11 @@
 		AB2DB7A4271E96B800D150EC /* OrdersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7A3271E96B800D150EC /* OrdersPresenter.swift */; };
 		AB2DB7A6271E96C800D150EC /* OrdersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7A5271E96C800D150EC /* OrdersInteractor.swift */; };
 		AB2DB7A8271E970600D150EC /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7A7271E970600D150EC /* OrdersViewController.swift */; };
+		AB2DB7AA271E975200D150EC /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7A9271E975200D150EC /* ProfileProtocols.swift */; };
+		AB2DB7B3271E97A100D150EC /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7B2271E97A100D150EC /* ProfileRouter.swift */; };
+		AB2DB7B5271E97B900D150EC /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7B4271E97B900D150EC /* ProfilePresenter.swift */; };
+		AB2DB7B7271E97FD00D150EC /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7B6271E97FD00D150EC /* ProfileInteractor.swift */; };
+		AB2DB7B9271E983400D150EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7B8271E983400D150EC /* ProfileViewController.swift */; };
 		AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50FDF926D0FE580021A323 /* Constants.swift */; };
 		AB968E5B26CBC1DF00BAD315 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */; };
 		AB97CFF926C27303008F9D39 /* AuthenticationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */; };
@@ -93,6 +98,11 @@
 		AB2DB7A3271E96B800D150EC /* OrdersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPresenter.swift; sourceTree = "<group>"; };
 		AB2DB7A5271E96C800D150EC /* OrdersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersInteractor.swift; sourceTree = "<group>"; };
 		AB2DB7A7271E970600D150EC /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		AB2DB7A9271E975200D150EC /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
+		AB2DB7B2271E97A100D150EC /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		AB2DB7B4271E97B900D150EC /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		AB2DB7B6271E97FD00D150EC /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		AB2DB7B8271E983400D150EC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AB50FDF926D0FE580021A323 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocols.swift; sourceTree = "<group>"; };
@@ -292,6 +302,12 @@
 		AB2DB77A271E8FD400D150EC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				AB2DB7AF271E976500D150EC /* View */,
+				AB2DB7AE271E976100D150EC /* Interactor */,
+				AB2DB7AD271E975B00D150EC /* Presenter */,
+				AB2DB7AC271E975800D150EC /* Entity */,
+				AB2DB7AB271E975500D150EC /* Router */,
+				AB2DB7A9271E975200D150EC /* ProfileProtocols.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -420,6 +436,45 @@
 			isa = PBXGroup;
 			children = (
 				AB2DB7A7271E970600D150EC /* OrdersViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB2DB7AB271E975500D150EC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB7B2271E97A100D150EC /* ProfileRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AB2DB7AC271E975800D150EC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AB2DB7AD271E975B00D150EC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB7B4271E97B900D150EC /* ProfilePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AB2DB7AE271E976100D150EC /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB7B6271E97FD00D150EC /* ProfileInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AB2DB7AF271E976500D150EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB2DB7B8271E983400D150EC /* ProfileViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -724,6 +779,7 @@
 				AB139B9226C0FFB700D5A514 /* RootTabBarController.swift in Sources */,
 				AB2DB795271E940100D150EC /* WishlistPresenter.swift in Sources */,
 				AB139BAE26C132BA00D5A514 /* WelcomePresenter.swift in Sources */,
+				AB2DB7AA271E975200D150EC /* ProfileProtocols.swift in Sources */,
 				AB97CFFB26C2734D008F9D39 /* AuthenticationRouter.swift in Sources */,
 				AB2DB797271E941A00D150EC /* WishlistInteractor.swift in Sources */,
 				AB2DB782271E908700D150EC /* HomeProtocols.swift in Sources */,
@@ -733,6 +789,7 @@
 				AB2DB786271E90AC00D150EC /* HomeInteractor.swift in Sources */,
 				AB2DB7A8271E970600D150EC /* OrdersViewController.swift in Sources */,
 				AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */,
+				AB2DB7B5271E97B900D150EC /* ProfilePresenter.swift in Sources */,
 				AB2DB78A271E90BE00D150EC /* HomeRouter.swift in Sources */,
 				AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */,
 				ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */,
@@ -743,6 +800,7 @@
 				AB2DB7A2271E968C00D150EC /* OrdersRouter.swift in Sources */,
 				AB139B9B26C1001000D5A514 /* RootProtocols.swift in Sources */,
 				AB97CFFF26C273AF008F9D39 /* AuthenticationInteractor.swift in Sources */,
+				AB2DB7B3271E97A100D150EC /* ProfileRouter.swift in Sources */,
 				AB2DB790271E938800D150EC /* WishlistProtocols.swift in Sources */,
 				AB2DB7A6271E96C800D150EC /* OrdersInteractor.swift in Sources */,
 				AB2DB7A4271E96B800D150EC /* OrdersPresenter.swift in Sources */,
@@ -751,11 +809,13 @@
 				AB2DB793271E93DC00D150EC /* WishlistRouter.swift in Sources */,
 				AB139B9F26C105B700D5A514 /* RootInteractor.swift in Sources */,
 				AB2DB7A0271E965900D150EC /* OrdersProtocols.swift in Sources */,
+				AB2DB7B7271E97FD00D150EC /* ProfileInteractor.swift in Sources */,
 				AB2DB784271E909F00D150EC /* HomeViewController.swift in Sources */,
 				AB139B9D26C105AD00D5A514 /* RootPresenter.swift in Sources */,
 				AB968E5B26CBC1DF00BAD315 /* ValidationService.swift in Sources */,
 				AB97D00526C27ACE008F9D39 /* LoginView.swift in Sources */,
 				AB2DB788271E90B300D150EC /* HomePresenter.swift in Sources */,
+				AB2DB7B9271E983400D150EC /* ProfileViewController.swift in Sources */,
 				ABE4C45926B1810500DBDCA4 /* SceneDelegate.swift in Sources */,
 				ABCA270826C3A04F00144ED7 /* FormFieldView.swift in Sources */,
 			);
