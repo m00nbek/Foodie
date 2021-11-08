@@ -7,18 +7,18 @@
 
 import UIKit
 
-protocol OrdersViewProtocol {
+protocol OrdersViewProtocol: AnyObject {
     var presenter: OrdersPresenterProtocol? {get set}
 }
-protocol OrdersInteractorProtocol {
+protocol OrdersInteractorProtocol: AnyObject {
     var presenter: OrdersPresenterProtocol? {get set}
 }
-protocol OrdersPresenterProtocol {
+protocol OrdersPresenterProtocol: AnyObject {
     var view: OrdersViewProtocol? {get set}
     var interactor: OrdersInteractorProtocol? {get set}
     var router: OrdersRouterProtocol? {get set}
 }
-protocol OrdersRouterProtocol {
+protocol OrdersRouterProtocol: AnyObject {
     static func createOrders() -> UIViewController & OrdersViewProtocol
 }
 

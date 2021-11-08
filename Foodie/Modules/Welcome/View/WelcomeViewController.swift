@@ -19,7 +19,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
         gradient.frame = view.frame
     }
     // MARK: - Properties
-    var presenter: WelcomePresenterProtocol?
+    weak var presenter: WelcomePresenterProtocol?
     private let gradient: CAGradientLayer = {
         let gradient = CAGradientLayer()
         gradient.startPoint = .init(x: 0.5, y: 0.5)

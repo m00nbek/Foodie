@@ -8,7 +8,7 @@
 import Foundation
 
 class OrdersPresenter: OrdersPresenterProtocol {
-    var view: OrdersViewProtocol?
-    var interactor: OrdersInteractorProtocol?
-    var router: OrdersRouterProtocol?
+    weak var view: OrdersViewProtocol?
+    weak var interactor: OrdersInteractorProtocol?
+    weak var router: OrdersRouterProtocol?
 }

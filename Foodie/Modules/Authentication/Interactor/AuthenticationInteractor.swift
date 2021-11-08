@@ -8,5 +8,5 @@
 import Foundation
 
 class AuthenticationInteractor: AuthenticationInteractorProtocol {
-    var presenter: AuthenticationPresenterProtocol?
+    weak var presenter: AuthenticationPresenterProtocol?
 }

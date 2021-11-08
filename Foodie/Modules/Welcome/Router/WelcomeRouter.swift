@@ -9,9 +9,9 @@ import UIKit
 
 class WelcomeRouter: WelcomeRouterProtocol {
     static func createWelcome() -> UIViewController & WelcomeViewProtocol {
-        var view: UIViewController & WelcomeViewProtocol = WelcomeViewController()
-        var interactor: WelcomeInteractorProtocol = WelcomeInteractor()
-        var presenter: WelcomePresenterProtocol = WelcomePresenter()
+        let view: UIViewController & WelcomeViewProtocol = WelcomeViewController()
+        let interactor: WelcomeInteractorProtocol = WelcomeInteractor()
+        let presenter: WelcomePresenterProtocol = WelcomePresenter()
         let router: WelcomeRouterProtocol = WelcomeRouter()
         
         view.presenter = presenter

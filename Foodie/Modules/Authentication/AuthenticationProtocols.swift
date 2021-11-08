@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol AuthenticationViewProtocol {
+protocol AuthenticationViewProtocol: AnyObject {
     var presenter: AuthenticationPresenterProtocol? {get set}
 }
-protocol AuthenticationInteractorProtocol {
+protocol AuthenticationInteractorProtocol: AnyObject {
     var presenter: AuthenticationPresenterProtocol? {get set}
 }
-protocol AuthenticationPresenterProtocol {
+protocol AuthenticationPresenterProtocol: AnyObject {
     var view: AuthenticationViewProtocol? {get set}
     var interactor: AuthenticationInteractorProtocol? {get set}
     var router: AuthenticationRouterProtocol? {get set}
 }
-protocol AuthenticationRouterProtocol {
+protocol AuthenticationRouterProtocol: AnyObject {
     static func createAuthentication() -> UIViewController & AuthenticationViewProtocol
 }

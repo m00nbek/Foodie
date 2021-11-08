@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol HomeViewProtocol {
+protocol HomeViewProtocol: AnyObject {
     var presenter: HomePresenterProtocol? {get set}
 }
-protocol HomeInteractorProtocol {
+protocol HomeInteractorProtocol: AnyObject {
     var presenter: HomePresenterProtocol? {get set}
 }
-protocol HomePresenterProtocol {
+protocol HomePresenterProtocol: AnyObject {
     var view: HomeViewProtocol? {get set}
     var interactor: HomeInteractorProtocol? {get set}
     var router: HomeRouterProtocol? {get set}
 }
-protocol HomeRouterProtocol {
+protocol HomeRouterProtocol: AnyObject {
     static func createHome() -> UIViewController & HomeViewProtocol
 }

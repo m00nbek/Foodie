@@ -8,7 +8,7 @@
 import Foundation
 
 class ProfilePresenter: ProfilePresenterProtocol {
-    var view: ProfileViewProtocol?
-    var interactor: ProfileInteractorProtocol?
-    var router: ProfileRouterProtocol?
+    weak var view: ProfileViewProtocol?
+    weak var interactor: ProfileInteractorProtocol?
+    weak var router: ProfileRouterProtocol?
 }

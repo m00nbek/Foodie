@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
         setupUI()
     }
     // MARK: - Properties
-    var presenter: ProfilePresenterProtocol?
+    weak var presenter: ProfilePresenterProtocol?
     // MARK: - Selectors
     // MARK: - Functions
     private func setupUI() {

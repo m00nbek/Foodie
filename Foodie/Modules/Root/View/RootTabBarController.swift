@@ -20,7 +20,7 @@ class RootTabBarController: UITabBarController, RootViewProtocol {
 //        presenter?.presentWelcome(in: self)
     }
     // MARK: - Properties
-    var presenter: RootPresenterProtocol?
+    weak var presenter: RootPresenterProtocol?
     // MARK: - Selectors
     // MARK: - Functions
     private func setupUI() {

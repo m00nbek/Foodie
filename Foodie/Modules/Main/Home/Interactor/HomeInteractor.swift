@@ -8,5 +8,5 @@
 import Foundation
 
 class HomeInteractor: HomeInteractorProtocol {
-    var presenter: HomePresenterProtocol?
+    weak var presenter: HomePresenterProtocol?
 }

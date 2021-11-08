@@ -8,7 +8,7 @@
 import Foundation
 
 class RootInteractor: RootInteractorProtocol {
-    var presenter: RootPresenterProtocol?
+    weak var presenter: RootPresenterProtocol?
     func isLoggedIn() -> Bool {
         return false
     }

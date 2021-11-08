@@ -10,9 +10,9 @@ import UIKit
 class RootRouter: RootRouterProtocol {
     
     static func createRoot() -> UITabBarController & RootViewProtocol {
-        var view: UITabBarController & RootViewProtocol = RootTabBarController()
-        var interactor: RootInteractorProtocol = RootInteractor()
-        var presenter: RootPresenterProtocol = RootPresenter()
+        let view: UITabBarController & RootViewProtocol = RootTabBarController()
+        let interactor: RootInteractorProtocol = RootInteractor()
+        let presenter: RootPresenterProtocol = RootPresenter()
         let router: RootRouterProtocol = RootRouter()
     
         view.presenter = presenter

@@ -8,9 +8,9 @@
 import UIKit
 
 class RootPresenter: RootPresenterProtocol {
-    var view: RootViewProtocol?
-    var interactor: RootInteractorProtocol?
-    var router: RootRouterProtocol?
+    weak var view: RootViewProtocol?
+    weak var interactor: RootInteractorProtocol?
+    weak var router: RootRouterProtocol?
    
     func presentWelcome(in view: UIViewController?) {
         if !interactor!.isLoggedIn() {

@@ -8,5 +8,5 @@
 import Foundation
 
 class WelcomeInteractor: WelcomeInteractorProtocol {
-    var presenter: WelcomePresenterProtocol?
+    weak var presenter: WelcomePresenterProtocol?
 }

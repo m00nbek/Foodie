@@ -8,5 +8,5 @@
 import Foundation
 
 class OrdersInteractor: OrdersInteractorProtocol {
-    var presenter: OrdersPresenterProtocol?
+    weak var presenter: OrdersPresenterProtocol?
 }

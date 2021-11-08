@@ -9,9 +9,9 @@ import UIKit
 
 class ProfileRouter: ProfileRouterProtocol {
     static func createProfile() -> UIViewController & ProfileViewProtocol {
-        var view: UIViewController & ProfileViewProtocol = ProfileViewController()
-        var interactor: ProfileInteractorProtocol = ProfileInteractor()
-        var presenter: ProfilePresenterProtocol = ProfilePresenter()
+        let view: UIViewController & ProfileViewProtocol = ProfileViewController()
+        let interactor: ProfileInteractorProtocol = ProfileInteractor()
+        let presenter: ProfilePresenterProtocol = ProfilePresenter()
         let router: ProfileRouterProtocol = ProfileRouter()
         
         view.presenter = presenter

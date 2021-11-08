@@ -14,7 +14,7 @@ class OrdersViewController: UIViewController, OrdersViewProtocol {
         setupUI()
     }
     // MARK: - Properties
-    var presenter: OrdersPresenterProtocol?
+    weak var presenter: OrdersPresenterProtocol?
     // MARK: - Selectors
     // MARK: - Functions
     private func setupUI() {

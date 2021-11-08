@@ -10,9 +10,9 @@ import UIKit
 class AuthenticationRouter: AuthenticationRouterProtocol {
     
     static func createAuthentication() -> UIViewController & AuthenticationViewProtocol {
-        var view: UIViewController & AuthenticationViewProtocol = AuthenticationViewController()
-        var interactor: AuthenticationInteractorProtocol = AuthenticationInteractor()
-        var presenter: AuthenticationPresenterProtocol = AuthenticationPresenter()
+        let view: UIViewController & AuthenticationViewProtocol = AuthenticationViewController()
+        let interactor: AuthenticationInteractorProtocol = AuthenticationInteractor()
+        let presenter: AuthenticationPresenterProtocol = AuthenticationPresenter()
         let router: AuthenticationRouterProtocol = AuthenticationRouter()
         
         view.presenter = presenter

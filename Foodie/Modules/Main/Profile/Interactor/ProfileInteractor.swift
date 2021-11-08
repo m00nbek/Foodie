@@ -8,5 +8,5 @@
 import UIKit
 
 class ProfileInteractor: ProfileInteractorProtocol {
-    var presenter: ProfilePresenterProtocol?
+    weak var presenter: ProfilePresenterProtocol?
 }

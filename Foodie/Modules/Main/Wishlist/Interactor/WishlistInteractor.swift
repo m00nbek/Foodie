@@ -8,5 +8,5 @@
 import Foundation
 
 class WishlistInteractor: WishlistInteractorProtocol {
-    var presenter: WishlistPresenterProtocol?
+    weak var presenter: WishlistPresenterProtocol?
 }

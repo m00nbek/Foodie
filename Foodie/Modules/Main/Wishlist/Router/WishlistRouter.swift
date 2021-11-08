@@ -9,9 +9,9 @@ import UIKit
 
 class WishlistRouter: WishlistRouterProtocol {
     static func createWishlist() -> UIViewController & WishlistViewProtocol {
-        var view: UIViewController & WishlistViewProtocol = WishlistViewController()
-        var interactor: WishlistInteractorProtocol = WishlistInteractor()
-        var presenter: WishlistPresenterProtocol = WishlistPresenter()
+        let view: UIViewController & WishlistViewProtocol = WishlistViewController()
+        let interactor: WishlistInteractorProtocol = WishlistInteractor()
+        let presenter: WishlistPresenterProtocol = WishlistPresenter()
         let router: WishlistRouterProtocol = WishlistRouter()
         
         view.presenter = presenter

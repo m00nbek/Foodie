@@ -18,7 +18,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         removeKeyboardNotifications()
     }
     // MARK: - Properties
-    var presenter: AuthenticationPresenterProtocol?
+    weak var presenter: AuthenticationPresenterProtocol?
     private let loginBorder: UIView = {
         let loginBorder = UIView()
         loginBorder.backgroundColor = Constants.mainOrange

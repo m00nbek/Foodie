@@ -7,22 +7,22 @@
 
 import UIKit
 
-protocol RootViewProtocol {
+protocol RootViewProtocol: AnyObject {
     var presenter: RootPresenterProtocol? {get set}
 }
-protocol RootInteractorProtocol {
+protocol RootInteractorProtocol: AnyObject {
     var presenter: RootPresenterProtocol? {get set}
     
     func isLoggedIn() -> Bool
 }
-protocol RootPresenterProtocol {
+protocol RootPresenterProtocol: AnyObject {
     var view: RootViewProtocol? {get set}
     var interactor: RootInteractorProtocol? {get set}
     var router: RootRouterProtocol? {get set}
     
     func presentWelcome(in view: UIViewController?)
 }
-protocol RootRouterProtocol {
+protocol RootRouterProtocol: AnyObject {
     static func createRoot() -> UITabBarController & RootViewProtocol
     func presentWelcome(in view: UIViewController?)
 }

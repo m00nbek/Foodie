@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol WishlistViewProtocol {
+protocol WishlistViewProtocol: AnyObject {
     var presenter: WishlistPresenterProtocol? {get set}
 }
-protocol WishlistInteractorProtocol {
+protocol WishlistInteractorProtocol: AnyObject {
     var presenter: WishlistPresenterProtocol? {get set}
 }
-protocol WishlistPresenterProtocol {
+protocol WishlistPresenterProtocol: AnyObject {
     var view: WishlistViewProtocol? {get set}
     var interactor: WishlistInteractorProtocol? {get set}
     var router: WishlistRouterProtocol? {get set}
 }
-protocol WishlistRouterProtocol {
+protocol WishlistRouterProtocol: AnyObject {
     static func createWishlist() -> UIViewController & WishlistViewProtocol
 }

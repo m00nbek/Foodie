@@ -8,7 +8,7 @@
 import Foundation
 
 class WishlistPresenter: WishlistPresenterProtocol {
-    var view: WishlistViewProtocol?
-    var interactor: WishlistInteractorProtocol?
-    var router: WishlistRouterProtocol?
+    weak var view: WishlistViewProtocol?
+    weak var interactor: WishlistInteractorProtocol?
+    weak var router: WishlistRouterProtocol?
 }

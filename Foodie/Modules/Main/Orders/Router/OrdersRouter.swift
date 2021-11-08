@@ -9,9 +9,9 @@ import UIKit
 
 class OrdersRouter: OrdersRouterProtocol {
     static func createOrders() -> UIViewController & OrdersViewProtocol {
-        var view: UIViewController & OrdersViewProtocol = OrdersViewController()
-        var interactor: OrdersInteractorProtocol = OrdersInteractor()
-        var presenter: OrdersPresenterProtocol = OrdersPresenter()
+        let view: UIViewController & OrdersViewProtocol = OrdersViewController()
+        let interactor: OrdersInteractorProtocol = OrdersInteractor()
+        let presenter: OrdersPresenterProtocol = OrdersPresenter()
         let router: OrdersRouterProtocol = OrdersRouter()
         
         view.presenter = presenter
