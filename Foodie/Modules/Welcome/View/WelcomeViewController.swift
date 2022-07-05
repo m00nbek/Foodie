@@ -63,7 +63,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
         button.backgroundColor = .white
         button.layer.cornerRadius = 25
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        button.addTarget(self, action: #selector(getStarted), for: .touchUpInside)
+		button.addTarget(WelcomeViewController.self, action: #selector(getStarted), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isUserInteractionEnabled = true
         return button
