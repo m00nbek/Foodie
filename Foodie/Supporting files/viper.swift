@@ -7,10 +7,16 @@ class ModuleViewController: UIViewController, ModuleViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+		setupButtonTargets()
     }
     // MARK: - Properties
     var presenter: ModulePresenterProtocol?
     // MARK: - Selectors
+	
+	// Button targets
+	private func setupButtonTargets() {
+		
+	}
     // MARK: - Functions
     private func setupUI() {
 

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5EB87B2875E1E300BC8B6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB87A2875E1E300BC8B6A /* LoginViewController.swift */; };
+		3B5EB87D2875E23D00BC8B6A /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB87C2875E23D00BC8B6A /* LoginInteractor.swift */; };
+		3B5EB87F2875EEE600BC8B6A /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB87E2875EEE600BC8B6A /* LoginPresenter.swift */; };
+		3B5EB8812875EEED00BC8B6A /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB8802875EEED00BC8B6A /* LoginRouter.swift */; };
+		3B5EB8832875EEF900BC8B6A /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB8822875EEF900BC8B6A /* LoginProtocols.swift */; };
 		5076AACC7381650D1164EECF /* Pods_FoodieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5603FA9E9DBEF41B239147 /* Pods_FoodieTests.framework */; };
 		AB139B9226C0FFB700D5A514 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139B9126C0FFB700D5A514 /* RootTabBarController.swift */; };
 		AB139B9426C0FFC400D5A514 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139B9326C0FFC400D5A514 /* RootRouter.swift */; };
@@ -70,6 +75,11 @@
 
 /* Begin PBXFileReference section */
 		11139549DD11440EC1411996 /* Pods-Foodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodie.release.xcconfig"; path = "Target Support Files/Pods-Foodie/Pods-Foodie.release.xcconfig"; sourceTree = "<group>"; };
+		3B5EB87A2875E1E300BC8B6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3B5EB87C2875E23D00BC8B6A /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		3B5EB87E2875EEE600BC8B6A /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		3B5EB8802875EEED00BC8B6A /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		3B5EB8822875EEF900BC8B6A /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		44411F23D4C22A9E1BB06774 /* Pods_Foodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A0027C1A2E62D4AFEA1631 /* Pods-FoodieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodieTests.release.xcconfig"; path = "Target Support Files/Pods-FoodieTests/Pods-FoodieTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB139B9126C0FFB700D5A514 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
@@ -147,6 +157,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B5EB8722875D47D00BC8B6A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3B5EB8732875D48E00BC8B6A /* Login */,
+				3B5EB8742875D49200BC8B6A /* SignUp */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		3B5EB8732875D48E00BC8B6A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3B5EB8792875E16400BC8B6A /* View */,
+				3B5EB8782875E15F00BC8B6A /* Interactor */,
+				3B5EB8772875E15A00BC8B6A /* Presenter */,
+				3B5EB8762875E15700BC8B6A /* Entity */,
+				3B5EB8752875E14C00BC8B6A /* Router */,
+				3B5EB8822875EEF900BC8B6A /* LoginProtocols.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3B5EB8742875D49200BC8B6A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		3B5EB8752875E14C00BC8B6A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3B5EB8802875EEED00BC8B6A /* LoginRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3B5EB8762875E15700BC8B6A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3B5EB8772875E15A00BC8B6A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3B5EB87E2875EEE600BC8B6A /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3B5EB8782875E15F00BC8B6A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3B5EB87C2875E23D00BC8B6A /* LoginInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3B5EB8792875E16400BC8B6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B5EB87A2875E1E300BC8B6A /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5B7E44D679B7B4ECB2B0A09E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +667,7 @@
 			children = (
 				AB139B8F26C0F3A500D5A514 /* Root */,
 				AB139B9026C0F3C900D5A514 /* Welcome */,
+				3B5EB8722875D47D00BC8B6A /* Auth */,
 				AB97CFF226C272CE008F9D39 /* Authentication */,
 				AB2DB77B271E900900D150EC /* Main */,
 			);
@@ -777,17 +856,20 @@
 			files = (
 				AB97CFFD26C273A5008F9D39 /* AuthenticationPresenter.swift in Sources */,
 				AB139B9226C0FFB700D5A514 /* RootTabBarController.swift in Sources */,
+				3B5EB87F2875EEE600BC8B6A /* LoginPresenter.swift in Sources */,
 				AB2DB795271E940100D150EC /* WishlistPresenter.swift in Sources */,
 				AB139BAE26C132BA00D5A514 /* WelcomePresenter.swift in Sources */,
 				AB2DB7AA271E975200D150EC /* ProfileProtocols.swift in Sources */,
 				AB97CFFB26C2734D008F9D39 /* AuthenticationRouter.swift in Sources */,
 				AB2DB797271E941A00D150EC /* WishlistInteractor.swift in Sources */,
 				AB2DB782271E908700D150EC /* HomeProtocols.swift in Sources */,
+				3B5EB87D2875E23D00BC8B6A /* LoginInteractor.swift in Sources */,
 				AB2DB799271E943C00D150EC /* WishlistView.swift in Sources */,
 				AB97D00126C273B8008F9D39 /* AuthenticationViewController.swift in Sources */,
 				AB139BAA26C132A700D5A514 /* WelcomeViewController.swift in Sources */,
 				AB2DB786271E90AC00D150EC /* HomeInteractor.swift in Sources */,
 				AB2DB7A8271E970600D150EC /* OrdersViewController.swift in Sources */,
+				3B5EB8812875EEED00BC8B6A /* LoginRouter.swift in Sources */,
 				AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */,
 				AB2DB7B5271E97B900D150EC /* ProfilePresenter.swift in Sources */,
 				AB2DB78A271E90BE00D150EC /* HomeRouter.swift in Sources */,
@@ -807,6 +889,7 @@
 				AB139B9426C0FFC400D5A514 /* RootRouter.swift in Sources */,
 				AB139BA826C1319A00D5A514 /* viper.swift in Sources */,
 				AB2DB793271E93DC00D150EC /* WishlistRouter.swift in Sources */,
+				3B5EB87B2875E1E300BC8B6A /* LoginViewController.swift in Sources */,
 				AB139B9F26C105B700D5A514 /* RootInteractor.swift in Sources */,
 				AB2DB7A0271E965900D150EC /* OrdersProtocols.swift in Sources */,
 				AB2DB7B7271E97FD00D150EC /* ProfileInteractor.swift in Sources */,
@@ -816,6 +899,7 @@
 				AB97D00526C27ACE008F9D39 /* LoginView.swift in Sources */,
 				AB2DB788271E90B300D150EC /* HomePresenter.swift in Sources */,
 				AB2DB7B9271E983400D150EC /* ProfileViewController.swift in Sources */,
+				3B5EB8832875EEF900BC8B6A /* LoginProtocols.swift in Sources */,
 				ABE4C45926B1810500DBDCA4 /* SceneDelegate.swift in Sources */,
 				ABCA270826C3A04F00144ED7 /* FormFieldView.swift in Sources */,
 			);
