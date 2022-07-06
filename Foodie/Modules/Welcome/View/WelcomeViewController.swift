@@ -12,7 +12,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        view.layer.insertSublayer(gradient, at: 3)
+		setupButtonTargets()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -63,7 +63,6 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
         button.backgroundColor = .white
         button.layer.cornerRadius = 25
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
-		button.addTarget(WelcomeViewController.self, action: #selector(getStarted), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isUserInteractionEnabled = true
         return button
@@ -77,6 +76,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
     private func setupUI() {
         // style
         view.backgroundColor = Constants.mainOrange
+		view.layer.insertSublayer(gradient, at: 3)
         // subviews
         view.addSubview(logoImageView)
         view.addSubview(foodLabel)
@@ -104,4 +104,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
             getStartedButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
+	private func setupButtonTargets() {
+		getStartedButton.addTarget(self, action: #selector(getStarted), for: .touchUpInside)
+	}
 }

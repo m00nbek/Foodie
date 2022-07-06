@@ -13,6 +13,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         super.viewDidLoad()
         setupUI()
         addKeyboardNotifications()
+		setupButtonTargets()
     }
     deinit {
         removeKeyboardNotifications()
@@ -43,7 +44,6 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         button.setTitle("Login", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14)
-		button.addTarget(AuthenticationViewController.self, action: #selector(loginTapped), for: .touchUpInside)
         button.isUserInteractionEnabled = true
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -55,7 +55,6 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         button.titleLabel?.textAlignment = .center
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14)
-		button.addTarget(AuthenticationViewController.self, action: #selector(signUpTapped), for: .touchUpInside)
         button.isUserInteractionEnabled = true
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -160,6 +159,10 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         ])
 
     }
+	private func setupButtonTargets() {
+		loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+		signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
+	}
     private func setupBorder(for button: UIButton, with border: UIView) {
         button.addSubview(border)
         NSLayoutConstraint.activate([
