@@ -72,6 +72,10 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
         // show Authentication
         presenter?.showAuthentication(navigationController: navigationController)
     }
+	// Button targets
+	private func setupButtonTargets() {
+		getStartedButton.addTarget(self, action: #selector(getStarted), for: .touchUpInside)
+	}
     // MARK: - Functions
     private func setupUI() {
         // style
@@ -104,7 +108,4 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
             getStartedButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
-	private func setupButtonTargets() {
-		getStartedButton.addTarget(self, action: #selector(getStarted), for: .touchUpInside)
-	}
 }
