@@ -12,6 +12,11 @@
 		3B5EB87F2875EEE600BC8B6A /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB87E2875EEE600BC8B6A /* LoginPresenter.swift */; };
 		3B5EB8812875EEED00BC8B6A /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB8802875EEED00BC8B6A /* LoginRouter.swift */; };
 		3B5EB8832875EEF900BC8B6A /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB8822875EEF900BC8B6A /* LoginProtocols.swift */; };
+		3B5EB88A2875F84500BC8B6A /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB8892875F84500BC8B6A /* RegisterProtocols.swift */; };
+		3B5EB88C2875F85400BC8B6A /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB88B2875F85400BC8B6A /* RegisterRouter.swift */; };
+		3B5EB88E2875F85B00BC8B6A /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB88D2875F85B00BC8B6A /* RegisterPresenter.swift */; };
+		3B5EB8902875F86400BC8B6A /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB88F2875F86400BC8B6A /* RegisterInteractor.swift */; };
+		3B5EB8922875F88A00BC8B6A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5EB8912875F88A00BC8B6A /* RegisterViewController.swift */; };
 		5076AACC7381650D1164EECF /* Pods_FoodieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5603FA9E9DBEF41B239147 /* Pods_FoodieTests.framework */; };
 		AB139B9226C0FFB700D5A514 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139B9126C0FFB700D5A514 /* RootTabBarController.swift */; };
 		AB139B9426C0FFC400D5A514 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB139B9326C0FFC400D5A514 /* RootRouter.swift */; };
@@ -80,6 +85,11 @@
 		3B5EB87E2875EEE600BC8B6A /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		3B5EB8802875EEED00BC8B6A /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		3B5EB8822875EEF900BC8B6A /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		3B5EB8892875F84500BC8B6A /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
+		3B5EB88B2875F85400BC8B6A /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		3B5EB88D2875F85B00BC8B6A /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		3B5EB88F2875F86400BC8B6A /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		3B5EB8912875F88A00BC8B6A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		44411F23D4C22A9E1BB06774 /* Pods_Foodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A0027C1A2E62D4AFEA1631 /* Pods-FoodieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodieTests.release.xcconfig"; path = "Target Support Files/Pods-FoodieTests/Pods-FoodieTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB139B9126C0FFB700D5A514 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
@@ -161,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				3B5EB8732875D48E00BC8B6A /* Login */,
-				3B5EB8742875D49200BC8B6A /* SignUp */,
+				3B5EB8742875D49200BC8B6A /* Register */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -179,11 +189,17 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		3B5EB8742875D49200BC8B6A /* SignUp */ = {
+		3B5EB8742875D49200BC8B6A /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				3B5EB8882875F83400BC8B6A /* View */,
+				3B5EB8872875F83000BC8B6A /* Interactor */,
+				3B5EB8862875F61F00BC8B6A /* Presenter */,
+				3B5EB8852875F5EC00BC8B6A /* Entity */,
+				3B5EB8842875F5DE00BC8B6A /* Router */,
+				3B5EB8892875F84500BC8B6A /* RegisterProtocols.swift */,
 			);
-			path = SignUp;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		3B5EB8752875E14C00BC8B6A /* Router */ = {
@@ -221,6 +237,45 @@
 			isa = PBXGroup;
 			children = (
 				3B5EB87A2875E1E300BC8B6A /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B5EB8842875F5DE00BC8B6A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3B5EB88B2875F85400BC8B6A /* RegisterRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3B5EB8852875F5EC00BC8B6A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3B5EB8862875F61F00BC8B6A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3B5EB88D2875F85B00BC8B6A /* RegisterPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3B5EB8872875F83000BC8B6A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3B5EB88F2875F86400BC8B6A /* RegisterInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3B5EB8882875F83400BC8B6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B5EB8912875F88A00BC8B6A /* RegisterViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -872,6 +927,7 @@
 				3B5EB8812875EEED00BC8B6A /* LoginRouter.swift in Sources */,
 				AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */,
 				AB2DB7B5271E97B900D150EC /* ProfilePresenter.swift in Sources */,
+				3B5EB88E2875F85B00BC8B6A /* RegisterPresenter.swift in Sources */,
 				AB2DB78A271E90BE00D150EC /* HomeRouter.swift in Sources */,
 				AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */,
 				ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */,
@@ -879,11 +935,14 @@
 				AB97CFF926C27303008F9D39 /* AuthenticationProtocols.swift in Sources */,
 				AB139BB026C1332800D5A514 /* WelcomeRouter.swift in Sources */,
 				AB139BA626C1318200D5A514 /* WelcomeProtocols.swift in Sources */,
+				3B5EB8902875F86400BC8B6A /* RegisterInteractor.swift in Sources */,
 				AB2DB7A2271E968C00D150EC /* OrdersRouter.swift in Sources */,
 				AB139B9B26C1001000D5A514 /* RootProtocols.swift in Sources */,
 				AB97CFFF26C273AF008F9D39 /* AuthenticationInteractor.swift in Sources */,
 				AB2DB7B3271E97A100D150EC /* ProfileRouter.swift in Sources */,
 				AB2DB790271E938800D150EC /* WishlistProtocols.swift in Sources */,
+				3B5EB8922875F88A00BC8B6A /* RegisterViewController.swift in Sources */,
+				3B5EB88C2875F85400BC8B6A /* RegisterRouter.swift in Sources */,
 				AB2DB7A6271E96C800D150EC /* OrdersInteractor.swift in Sources */,
 				AB2DB7A4271E96B800D150EC /* OrdersPresenter.swift in Sources */,
 				AB139B9426C0FFC400D5A514 /* RootRouter.swift in Sources */,
@@ -896,6 +955,7 @@
 				AB2DB784271E909F00D150EC /* HomeViewController.swift in Sources */,
 				AB139B9D26C105AD00D5A514 /* RootPresenter.swift in Sources */,
 				AB968E5B26CBC1DF00BAD315 /* ValidationService.swift in Sources */,
+				3B5EB88A2875F84500BC8B6A /* RegisterProtocols.swift in Sources */,
 				AB97D00526C27ACE008F9D39 /* LoginView.swift in Sources */,
 				AB2DB788271E90B300D150EC /* HomePresenter.swift in Sources */,
 				AB2DB7B9271E983400D150EC /* ProfileViewController.swift in Sources */,
