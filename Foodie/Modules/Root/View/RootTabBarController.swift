@@ -17,10 +17,10 @@ class RootTabBarController: UITabBarController, RootViewProtocol {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        presenter?.presentWelcome(in: self)
+        presenter?.presentWelcome(in: self)
     }
     // MARK: - Properties
-    weak var presenter: RootPresenterProtocol?
+	var presenter: RootPresenterProtocol?
     // MARK: - Selectors
     // MARK: - Functions
     private func setupUI() {

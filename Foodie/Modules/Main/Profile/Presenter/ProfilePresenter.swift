@@ -9,6 +9,6 @@ import Foundation
 
 class ProfilePresenter: ProfilePresenterProtocol {
     weak var view: ProfileViewProtocol?
-    weak var interactor: ProfileInteractorProtocol?
-    weak var router: ProfileRouterProtocol?
+    var interactor: ProfileInteractorProtocol?
+    var router: ProfileRouterProtocol?
 }

@@ -9,6 +9,6 @@ import Foundation
 
 class AuthenticationPresenter: AuthenticationPresenterProtocol {
     weak var view: AuthenticationViewProtocol?
-    weak var interactor: AuthenticationInteractorProtocol?
-    weak var router: AuthenticationRouterProtocol?
+	var interactor: AuthenticationInteractorProtocol?
+    var router: AuthenticationRouterProtocol?
 }

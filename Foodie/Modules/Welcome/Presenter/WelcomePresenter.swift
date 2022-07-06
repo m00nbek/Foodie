@@ -9,8 +9,8 @@ import UIKit
 
 class WelcomePresenter: WelcomePresenterProtocol {
     weak var view: WelcomeViewProtocol?
-    weak var interactor: WelcomeInteractorProtocol?
-    weak var router: WelcomeRouterProtocol?
+	var interactor: WelcomeInteractorProtocol?
+	var router: WelcomeRouterProtocol?
     
     func showAuthentication(navigationController: UINavigationController?) {
         router?.pushAuthentication(navigationController: navigationController)

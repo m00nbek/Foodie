@@ -19,12 +19,12 @@ class ModuleViewController: UIViewController, ModuleViewProtocol {
 
 // MARK: - Interactor
 class ModuleInteractor: ModuleInteractorProtocol {
-    var presenter: ModulePresenterProtocol?
+    weak var presenter: ModulePresenterProtocol?
 }
 
 // MARK: - Presenter
 class ModulePresenter: ModulePresenterProtocol {
-    var view: ModuleViewProtocol?
+    weak var view: ModuleViewProtocol?
     var interactor: ModuleInteractorProtocol?
     var router: ModuleRouterProtocol?
 }
@@ -32,9 +32,9 @@ class ModulePresenter: ModulePresenterProtocol {
 // MARK: - Router
 class ModuleRouter: ModuleRouterProtocol {
     static func createModule() -> UIViewController & ModuleViewProtocol {
-        var view: UIViewController & ModuleViewProtocol = ModuleViewController()
-        var interactor: ModuleInteractorProtocol = ModuleInteractor()
-        var presenter: ModulePresenterProtocol = ModulePresenter()
+        let view: UIViewController & ModuleViewProtocol = ModuleViewController()
+        let interactor: ModuleInteractorProtocol = ModuleInteractor()
+        let presenter: ModulePresenterProtocol = ModulePresenter()
         let router: ModuleRouterProtocol = ModuleRouter()
         
         view.presenter = presenter
@@ -50,17 +50,17 @@ class ModuleRouter: ModuleRouterProtocol {
 }
 
 // MARK: - Protocols
-protocol ModuleViewProtocol {
+protocol ModuleViewProtocol: AnyObject {
     var presenter: ModulePresenterProtocol? {get set}
 }
-protocol ModuleInteractorProtocol {
+protocol ModuleInteractorProtocol: AnyObject {
     var presenter: ModulePresenterProtocol? {get set}
 }
-protocol ModulePresenterProtocol {
+protocol ModulePresenterProtocol: AnyObject {
     var view: ModuleViewProtocol? {get set}
     var interactor: ModuleInteractorProtocol? {get set}
     var router: ModuleRouterProtocol? {get set}
 }
-protocol ModuleRouterProtocol {
+protocol ModuleRouterProtocol: AnyObject {
     static func createModule() -> UIViewController & ModuleViewProtocol
 }

@@ -14,7 +14,7 @@ class WishlistViewController: UIViewController, WishlistViewProtocol {
         setupUI()
     }
     // MARK: - Properties
-    weak var presenter: WishlistPresenterProtocol?
+    var presenter: WishlistPresenterProtocol?
     // MARK: - Selectors
     // MARK: - Functions
     private func setupUI() {

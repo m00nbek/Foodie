@@ -15,7 +15,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         setupUI()
     }
     // MARK: - Properties
-    weak var presenter: HomePresenterProtocol?
+    var presenter: HomePresenterProtocol?
     // MARK: - Selectors
     // MARK: - Functions
     private func setupUI() {
