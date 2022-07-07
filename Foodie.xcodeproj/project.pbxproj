@@ -56,13 +56,6 @@
 		AB2DB7B9271E983400D150EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DB7B8271E983400D150EC /* ProfileViewController.swift */; };
 		AB50FDFA26D0FE580021A323 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB50FDF926D0FE580021A323 /* Constants.swift */; };
 		AB968E5B26CBC1DF00BAD315 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */; };
-		AB97CFF926C27303008F9D39 /* AuthenticationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */; };
-		AB97CFFB26C2734D008F9D39 /* AuthenticationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFFA26C2734D008F9D39 /* AuthenticationRouter.swift */; };
-		AB97CFFD26C273A5008F9D39 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFFC26C273A5008F9D39 /* AuthenticationPresenter.swift */; };
-		AB97CFFF26C273AF008F9D39 /* AuthenticationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97CFFE26C273AF008F9D39 /* AuthenticationInteractor.swift */; };
-		AB97D00126C273B8008F9D39 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97D00026C273B8008F9D39 /* AuthenticationViewController.swift */; };
-		AB97D00426C27ACE008F9D39 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97D00226C27ACE008F9D39 /* RegisterView.swift */; };
-		AB97D00526C27ACE008F9D39 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97D00326C27ACE008F9D39 /* LoginView.swift */; };
 		AB9FEA6F26D221EA00A12829 /* FoodieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FEA6E26D221EA00A12829 /* FoodieTests.swift */; };
 		AB9FEA7826D2226E00A12829 /* ValidationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9FEA7726D2226E00A12829 /* ValidationServiceTests.swift */; };
 		ABCA270826C3A04F00144ED7 /* FormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA270726C3A04F00144ED7 /* FormFieldView.swift */; };
@@ -135,13 +128,6 @@
 		AB2DB7B8271E983400D150EC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AB50FDF926D0FE580021A323 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
-		AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProtocols.swift; sourceTree = "<group>"; };
-		AB97CFFA26C2734D008F9D39 /* AuthenticationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRouter.swift; sourceTree = "<group>"; };
-		AB97CFFC26C273A5008F9D39 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
-		AB97CFFE26C273AF008F9D39 /* AuthenticationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractor.swift; sourceTree = "<group>"; };
-		AB97D00026C273B8008F9D39 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
-		AB97D00226C27ACE008F9D39 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		AB97D00326C27ACE008F9D39 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AB9FEA6C26D221EA00A12829 /* FoodieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9FEA6E26D221EA00A12829 /* FoodieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieTests.swift; sourceTree = "<group>"; };
 		AB9FEA7726D2226E00A12829 /* ValidationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceTests.swift; sourceTree = "<group>"; };
@@ -315,6 +301,7 @@
 		3B5EB895287601B100BC8B6A /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -684,61 +671,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		AB97CFF226C272CE008F9D39 /* Authentication_old */ = {
-			isa = PBXGroup;
-			children = (
-				AB97CFF726C272F6008F9D39 /* View */,
-				AB97CFF626C272F3008F9D39 /* Interactor */,
-				AB97CFF526C272EE008F9D39 /* Presenter */,
-				AB97CFF426C272E7008F9D39 /* Entity */,
-				AB97CFF326C272E3008F9D39 /* Router */,
-				AB97CFF826C27303008F9D39 /* AuthenticationProtocols.swift */,
-			);
-			path = Authentication_old;
-			sourceTree = "<group>";
-		};
-		AB97CFF326C272E3008F9D39 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				AB97CFFA26C2734D008F9D39 /* AuthenticationRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		AB97CFF426C272E7008F9D39 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				AB968E5A26CBC1DF00BAD315 /* ValidationService.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		AB97CFF526C272EE008F9D39 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				AB97CFFC26C273A5008F9D39 /* AuthenticationPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		AB97CFF626C272F3008F9D39 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				AB97CFFE26C273AF008F9D39 /* AuthenticationInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		AB97CFF726C272F6008F9D39 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AB97D00026C273B8008F9D39 /* AuthenticationViewController.swift */,
-				AB97D00326C27ACE008F9D39 /* LoginView.swift */,
-				AB97D00226C27ACE008F9D39 /* RegisterView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		AB9FEA6D26D221EA00A12829 /* FoodieTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -786,7 +718,6 @@
 				AB139B8F26C0F3A500D5A514 /* Root */,
 				AB139B9026C0F3C900D5A514 /* Welcome */,
 				3B5EB8722875D47D00BC8B6A /* Authentication */,
-				AB97CFF226C272CE008F9D39 /* Authentication_old */,
 				AB2DB77B271E900900D150EC /* Main */,
 			);
 			path = Modules;
@@ -972,19 +903,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB97CFFD26C273A5008F9D39 /* AuthenticationPresenter.swift in Sources */,
 				AB139B9226C0FFB700D5A514 /* RootTabBarController.swift in Sources */,
 				3B5EB87F2875EEE600BC8B6A /* LoginPresenter.swift in Sources */,
 				AB2DB795271E940100D150EC /* WishlistPresenter.swift in Sources */,
 				AB139BAE26C132BA00D5A514 /* WelcomePresenter.swift in Sources */,
 				AB2DB7AA271E975200D150EC /* ProfileProtocols.swift in Sources */,
-				AB97CFFB26C2734D008F9D39 /* AuthenticationRouter.swift in Sources */,
 				AB2DB797271E941A00D150EC /* WishlistInteractor.swift in Sources */,
 				3B5EB89E287601EF00BC8B6A /* AuthPresenter.swift in Sources */,
 				AB2DB782271E908700D150EC /* HomeProtocols.swift in Sources */,
 				3B5EB87D2875E23D00BC8B6A /* LoginInteractor.swift in Sources */,
 				AB2DB799271E943C00D150EC /* WishlistView.swift in Sources */,
-				AB97D00126C273B8008F9D39 /* AuthenticationViewController.swift in Sources */,
 				AB139BAA26C132A700D5A514 /* WelcomeViewController.swift in Sources */,
 				AB2DB786271E90AC00D150EC /* HomeInteractor.swift in Sources */,
 				AB2DB7A8271E970600D150EC /* OrdersViewController.swift in Sources */,
@@ -995,14 +923,11 @@
 				AB2DB78A271E90BE00D150EC /* HomeRouter.swift in Sources */,
 				AB139BAC26C132B000D5A514 /* WelcomeInteractor.swift in Sources */,
 				ABE4C45726B1810500DBDCA4 /* AppDelegate.swift in Sources */,
-				AB97D00426C27ACE008F9D39 /* RegisterView.swift in Sources */,
-				AB97CFF926C27303008F9D39 /* AuthenticationProtocols.swift in Sources */,
 				AB139BB026C1332800D5A514 /* WelcomeRouter.swift in Sources */,
 				AB139BA626C1318200D5A514 /* WelcomeProtocols.swift in Sources */,
 				3B5EB8902875F86400BC8B6A /* RegisterInteractor.swift in Sources */,
 				AB2DB7A2271E968C00D150EC /* OrdersRouter.swift in Sources */,
 				AB139B9B26C1001000D5A514 /* RootProtocols.swift in Sources */,
-				AB97CFFF26C273AF008F9D39 /* AuthenticationInteractor.swift in Sources */,
 				AB2DB7B3271E97A100D150EC /* ProfileRouter.swift in Sources */,
 				AB2DB790271E938800D150EC /* WishlistProtocols.swift in Sources */,
 				3B5EB8922875F88A00BC8B6A /* RegisterViewController.swift in Sources */,
@@ -1024,7 +949,6 @@
 				AB968E5B26CBC1DF00BAD315 /* ValidationService.swift in Sources */,
 				3B5EB8A0287601F700BC8B6A /* AuthRouter.swift in Sources */,
 				3B5EB88A2875F84500BC8B6A /* RegisterProtocols.swift in Sources */,
-				AB97D00526C27ACE008F9D39 /* LoginView.swift in Sources */,
 				AB2DB788271E90B300D150EC /* HomePresenter.swift in Sources */,
 				AB2DB7B9271E983400D150EC /* ProfileViewController.swift in Sources */,
 				3B5EB8832875EEF900BC8B6A /* LoginProtocols.swift in Sources */,
