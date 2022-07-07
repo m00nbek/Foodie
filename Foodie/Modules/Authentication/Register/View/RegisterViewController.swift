@@ -39,7 +39,7 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
 	// MARK: - Functions
 	private func setupUI() {
 		// style
-		view.backgroundColor = .systemGray5
+		view.backgroundColor = Constants.authGrayBg
 		// setup text views
 		let textViewStack = setupTextViews()
 		// subviews

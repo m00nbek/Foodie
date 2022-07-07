@@ -10,6 +10,7 @@ import UIKit
 final class Constants {
     static let mainOrange = UIColor(named: "mainOrange")
     static let gradientOrange = UIColor(named: "gradientOrange")
+	static let authGrayBg = UIColor(named: "authGrayBg")
 }
 
 final class Images {

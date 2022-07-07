@@ -78,23 +78,25 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 	// Bottom part
 	var contentView: UIView = {
 		let view = UIView()
+		view.backgroundColor = Constants.authGrayBg
 		view.translatesAutoresizingMaskIntoConstraints = false
 		return view
 	}()
 	private let authPageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
 	private let viewControllers: [UIViewController] = [LoginRouter.createLogin(), RegisterRouter.createRegister()]
-	
 	// MARK: - Selectors
 	@objc private func loginTapped() {
 		UIViewPropertyAnimator.init(duration: 0.3, curve: .linear) {
 			self.loginBorder.backgroundColor = Constants.mainOrange
 			self.signUpBorder.backgroundColor = .clear
+			self.authPageViewController.setViewControllers([self.viewControllers[0]], direction: .reverse, animated: true)
 		}.startAnimation()
 	}
 	@objc private func signUpTapped() {
 		UIViewPropertyAnimator.init(duration: 0.3, curve: .linear) {
 			self.loginBorder.backgroundColor = .clear
 			self.signUpBorder.backgroundColor = Constants.mainOrange
+			self.authPageViewController.setViewControllers([self.viewControllers[1]], direction: .forward, animated: true)
 		}.startAnimation()
 	}
 	// Button targets
@@ -110,8 +112,8 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 		setupBorder(for: signUpButton, with: signUpBorder)
 		// subviews
 		view.addSubview(logoImageView)
-		view.addSubview(buttonStack)
 		view.addSubview(contentView)
+		view.addSubview(buttonStack)
 		// logoImageView constraints
 		NSLayoutConstraint.activate([
 			logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -123,14 +125,15 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 			buttonStack.heightAnchor.constraint(equalToConstant: 50),
 			buttonStack.topAnchor.constraint(equalTo: logoImageView.bottomAnchor),
 			buttonStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-			buttonStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+			buttonStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+			
+			buttonStack.bottomAnchor.constraint(equalTo: contentView.topAnchor, constant: 35)
 		])
 		// contentView constraints
 		NSLayoutConstraint.activate([
-			contentView.topAnchor.constraint(equalTo: buttonStack.bottomAnchor),
 			contentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
 			contentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-			contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+			contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 			
 			contentView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.6)
 		])
@@ -146,7 +149,6 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 		authPageViewController.didMove(toParent: self)
 		
 		authPageViewController.delegate = self
-		authPageViewController.dataSource = self
 	}
 	private func setupBorder(for button: UIButton, with border: UIView) {
 		button.addSubview(border)
@@ -157,20 +159,5 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 		])
 	}
 }
-// MARK: - UIPageViewControllerDelegate/DataSource
-extension AuthViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-	func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-		guard let index = viewControllers.firstIndex(of: viewController), index > 0 else {
-			return nil
-		}
-		let before = index - 1
-		return viewControllers[before]
-	}
-	func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-		guard let index = viewControllers.firstIndex(of: viewController), index < (viewControllers.count - 1) else {
-			return nil
-		}
-		let after = index + 1
-		return viewControllers[after]
-	}
-}
+// MARK: - UIPageViewControllerDelegate
+extension AuthViewController: UIPageViewControllerDelegate {}
