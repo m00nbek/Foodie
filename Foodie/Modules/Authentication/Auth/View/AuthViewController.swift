@@ -15,6 +15,8 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 		setupButtonTargets()
 		setupPageViewController()
 		addKeyboardNotifications()
+		
+		navigationItem.hidesBackButton = true
 	}
 	deinit {
 		removeKeyboardNotifications()
