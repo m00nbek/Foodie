@@ -24,7 +24,7 @@ class WelcomeRouter: WelcomeRouterProtocol {
         return view
     }
     func pushAuthentication(navigationController: UINavigationController?) {
-        let authentication = AuthenticationRouter.createAuthentication()
-        navigationController?.pushViewController(authentication, animated: true)
+        let auth = AuthRouter.createAuth()
+        navigationController?.pushViewController(auth, animated: true)
     }
 }
