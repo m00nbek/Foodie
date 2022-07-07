@@ -14,6 +14,10 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 		setupUI()
 		setupButtonTargets()
 		setupPageViewController()
+		addKeyboardNotifications()
+	}
+	deinit {
+		removeKeyboardNotifications()
 	}
 	// MARK: - Properties
 	var presenter: AuthPresenterProtocol?
@@ -158,6 +162,27 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 			border.bottomAnchor.constraint(equalTo: button.bottomAnchor)
 		])
 	}
+	// Keyboard
+	@objc private func keyboardWillChange(notification: Notification) {
+		guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+			return
+		}
+		if notification.name == UIResponder.keyboardWillShowNotification {
+			logoImageView.isHidden = true
+			view.frame.origin.y = -(keyboardRect.height)
+		} else {
+			logoImageView.isHidden = false
+			view.frame.origin.y = 0
+		}
+	}
+	private func addKeyboardNotifications() {
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)		
+	}
+	private func removeKeyboardNotifications() {
+		NotificationCenter.default.removeObserver(self)
+	}
+	
 }
 // MARK: - UIPageViewControllerDelegate
 extension AuthViewController: UIPageViewControllerDelegate {}

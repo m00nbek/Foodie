@@ -13,6 +13,10 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 		super.viewDidLoad()
 		setupUI()
 		setupButtonTargets()
+		
+		// keyboard
+		let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+		view.addGestureRecognizer(tap)
 	}
 	// MARK: - Properties
 	var presenter: LoginPresenterProtocol?
@@ -42,6 +46,11 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 	private func setupButtonTargets() {
 		
 	}
+	
+	// keyboard
+	@objc func dismissKeyboard() {
+		view.endEditing(true)
+	}
 	// MARK: - Functions
 	private func setupUI() {
 		// style
@@ -67,7 +76,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 			loginButton.heightAnchor.constraint(equalToConstant: 60),
 			loginButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
 			loginButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-			loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
+			loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
 		])
 	}
 	private func setupTextViews() -> UIStackView {

@@ -13,6 +13,10 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
 		super.viewDidLoad()
 		setupUI()
 		setupButtonTargets()
+		
+		// keyboard
+		let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+		view.addGestureRecognizer(tap)
 	}
 	// MARK: - Properties
 	var presenter: RegisterPresenterProtocol?
@@ -35,6 +39,11 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
 	// Button targets
 	private func setupButtonTargets() {
 		
+	}
+	
+	// keyboard
+	@objc func dismissKeyboard() {
+		view.endEditing(true)
 	}
 	// MARK: - Functions
 	private func setupUI() {
