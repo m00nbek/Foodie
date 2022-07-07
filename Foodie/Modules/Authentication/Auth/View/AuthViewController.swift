@@ -78,16 +78,10 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 	// Bottom part
 	var contentView: UIView = {
 		let view = UIView()
-		view.backgroundColor = .red
 		view.translatesAutoresizingMaskIntoConstraints = false
 		return view
 	}()
-	
-	private let authPageViewController: UIPageViewController = {
-		let pvc = UIPageViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal)
-		pvc.view.translatesAutoresizingMaskIntoConstraints = false
-		return pvc
-	}()
+	private let authPageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
 	private let viewControllers: [UIViewController] = [LoginRouter.createLogin(), RegisterRouter.createRegister()]
 	
 	// MARK: - Selectors
@@ -103,24 +97,10 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 			self.signUpBorder.backgroundColor = Constants.mainOrange
 		}.startAnimation()
 	}
-	
 	// Button targets
 	private func setupButtonTargets() {
 		loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
 		signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
-	}
-	private func setupPageViewController() {
-		
-		self.addChild(authPageViewController)
-		self.contentView.addSubview(authPageViewController.view)
-		
-		authPageViewController.view.frame = contentView.bounds
-		
-		authPageViewController.setViewControllers(viewControllers, direction: .forward, animated: true)
-		
-		authPageViewController.didMove(toParent: self)
-		
-		authPageViewController.delegate = self
 	}
 	// MARK: - Functions
 	private func setupUI() {
@@ -155,6 +135,19 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 			contentView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.6)
 		])
 	}
+	private func setupPageViewController() {
+		addChild(authPageViewController)
+		contentView.addSubview(authPageViewController.view)
+		
+		authPageViewController.view.frame = contentView.bounds
+		
+		authPageViewController.setViewControllers([viewControllers[0]], direction: .forward, animated: true)
+		
+		authPageViewController.didMove(toParent: self)
+		
+		authPageViewController.delegate = self
+		authPageViewController.dataSource = self
+	}
 	private func setupBorder(for button: UIButton, with border: UIView) {
 		button.addSubview(border)
 		NSLayoutConstraint.activate([
@@ -164,8 +157,8 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 		])
 	}
 }
-
-extension AuthViewController: UIPageViewControllerDelegate {
+// MARK: - UIPageViewControllerDelegate/DataSource
+extension AuthViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
 	func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 		guard let index = viewControllers.firstIndex(of: viewController), index > 0 else {
 			return nil
@@ -173,7 +166,6 @@ extension AuthViewController: UIPageViewControllerDelegate {
 		let before = index - 1
 		return viewControllers[before]
 	}
-
 	func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
 		guard let index = viewControllers.firstIndex(of: viewController), index < (viewControllers.count - 1) else {
 			return nil
@@ -181,5 +173,4 @@ extension AuthViewController: UIPageViewControllerDelegate {
 		let after = index + 1
 		return viewControllers[after]
 	}
-
 }
