@@ -14,10 +14,10 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
         setupUI()
 		setupButtonTargets()
     }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        gradient.frame = view.frame
-    }
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		gradient.frame = view.bounds
+	}
     // MARK: - Properties
 	var presenter: WelcomePresenterProtocol?
     private let gradient: CAGradientLayer = {
@@ -80,12 +80,16 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
     private func setupUI() {
         // style
         view.backgroundColor = Constants.mainOrange
-		view.layer.insertSublayer(gradient, at: 3)
+		
         // subviews
         view.addSubview(logoImageView)
         view.addSubview(foodLabel)
         view.addSubview(toyImageView)
         view.addSubview(getStartedButton)
+		
+		// gradient
+		view.layer.insertSublayer(gradient, at: 3)
+		
         // constraints
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
