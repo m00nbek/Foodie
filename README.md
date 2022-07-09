@@ -1,3 +1,3 @@
 # Foodie
 
-Description of the project
+Food delivery app written in VIPER architecture
