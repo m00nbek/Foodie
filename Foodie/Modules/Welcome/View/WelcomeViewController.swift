@@ -14,20 +14,8 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
         setupUI()
 		setupButtonTargets()
     }
-	override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
-		gradient.frame = view.bounds
-	}
     // MARK: - Properties
 	var presenter: WelcomePresenterProtocol?
-    private let gradient: CAGradientLayer = {
-        let gradient = CAGradientLayer()
-        gradient.startPoint = .init(x: 0.5, y: 0.5)
-        gradient.colors = [UIColor.clear.cgColor,
-                           Constants.gradientOrange!.cgColor,
-                           Constants.mainOrange!.cgColor]
-        return gradient
-    }()
     private let logoImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "logo")
@@ -52,7 +40,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
         let iv = UIImageView()
         iv.image = UIImage(named: "toy")
         iv.backgroundColor = .clear
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -83,12 +71,9 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
 		
         // subviews
         view.addSubview(logoImageView)
+		view.addSubview(toyImageView)
         view.addSubview(foodLabel)
-        view.addSubview(toyImageView)
         view.addSubview(getStartedButton)
-		
-		// gradient
-		view.layer.insertSublayer(gradient, at: 3)
 		
         // constraints
         NSLayoutConstraint.activate([
