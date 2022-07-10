@@ -33,13 +33,16 @@ class FormFieldView: UIView {
     let invalidLabel = UILabel()
     
     let textField = UITextField()
-	let cancelButton = makeSymbolButton(systemName: "clear.fill", target: FormFieldView.self, selector: #selector(cancelTapped(_:)))
+	var cancelButton: UIButton
     
     // MARK: - Lifecycle
     required init(textFieldType: TextFieldType, delegate: FormFieldDelegate) {
         self.textFieldType = textFieldType
         self.delegate = delegate
-        super.init(frame: .zero)
+		self.cancelButton = UIButton()
+		super.init(frame: .zero)
+		
+		self.cancelButton = makeSymbolButton(systemName: "clear.fill", target: self, selector: #selector(cancelTapped(_:)))
         setup()
         style()
         layout()
