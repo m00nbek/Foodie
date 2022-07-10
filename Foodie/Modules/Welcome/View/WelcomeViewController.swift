@@ -18,7 +18,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
 	var presenter: WelcomePresenterProtocol?
     private let logoImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "logo")
+		iv.image = Images.mainLogo
         iv.contentMode = .scaleAspectFit
         iv.backgroundColor = .white
         iv.layer.cornerRadius = 60 / 2
@@ -38,7 +38,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
     }()
     private let toyImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "toy")
+		iv.image = Images.welcomeToy
         iv.backgroundColor = .clear
         iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +47,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
     private let getStartedButton: UIButton = {
         let button = UIButton()
         button.setTitle("Get started", for: .normal)
-        button.setTitleColor(Constants.mainOrange, for: .normal)
+        button.setTitleColor(Colors.mainOrange, for: .normal)
         button.backgroundColor = .white
         button.layer.cornerRadius = 25
         button.heightAnchor.constraint(equalToConstant: 60).isActive = true
@@ -67,7 +67,7 @@ class WelcomeViewController: UIViewController, WelcomeViewProtocol {
     // MARK: - Functions
     private func setupUI() {
         // style
-        view.backgroundColor = Constants.mainOrange
+        view.backgroundColor = Colors.mainOrange
 		
         // subviews
         view.addSubview(logoImageView)

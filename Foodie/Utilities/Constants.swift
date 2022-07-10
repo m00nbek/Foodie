@@ -7,13 +7,29 @@
 
 import UIKit
 
-final class Constants {
+final class Colors {
+	
+	// MARK: - Global
     static let mainOrange = UIColor(named: "mainOrange")
-    static let gradientOrange = UIColor(named: "gradientOrange")
+	// MARK: - Welcome
+	
+	// MARK: - Authentication
 	static let authGrayBg = UIColor(named: "authGrayBg")
+	
+	// MARK: - Main
 }
 
 final class Images {
+	
+	// MARK: - Global
+	static let mainLogo = UIImage(named: "mainLogo")
+	
+	// MARK: - Welcome
+	static let welcomeToy = UIImage(named: "welcomeToy")
+	// MARK: - Authentication
+	
+	
+	// MARK: - Main
     static let home = UIImage(named: "home")
     static let homeSelected = UIImage(named: "home_selected")
     static let wishlist = UIImage(named: "wishlist")

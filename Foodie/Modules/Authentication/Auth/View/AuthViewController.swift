@@ -26,7 +26,7 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 	
 	private let loginBorder: UIView = {
 		let loginBorder = UIView()
-		loginBorder.backgroundColor = Constants.mainOrange
+		loginBorder.backgroundColor = Colors.mainOrange
 		loginBorder.translatesAutoresizingMaskIntoConstraints = false
 		return loginBorder
 	}()
@@ -38,7 +38,7 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 	}()
 	private let logoImageView: UIImageView = {
 		let iv = UIImageView()
-		iv.image = UIImage(named: "logo")
+		iv.image = Images.mainLogo
 		iv.contentMode = .scaleAspectFit
 		iv.translatesAutoresizingMaskIntoConstraints = false
 		return iv
@@ -84,7 +84,7 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 	// Bottom part
 	var contentView: UIView = {
 		let view = UIView()
-		view.backgroundColor = Constants.authGrayBg
+		view.backgroundColor = Colors.authGrayBg
 		view.translatesAutoresizingMaskIntoConstraints = false
 		return view
 	}()
@@ -93,7 +93,7 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 	// MARK: - Selectors
 	@objc private func loginTapped() {
 		UIViewPropertyAnimator.init(duration: 0.3, curve: .linear) {
-			self.loginBorder.backgroundColor = Constants.mainOrange
+			self.loginBorder.backgroundColor = Colors.mainOrange
 			self.signUpBorder.backgroundColor = .clear
 			self.authPageViewController.setViewControllers([self.viewControllers[0]], direction: .reverse, animated: true)
 		}.startAnimation()
@@ -101,7 +101,7 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 	@objc private func signUpTapped() {
 		UIViewPropertyAnimator.init(duration: 0.3, curve: .linear) {
 			self.loginBorder.backgroundColor = .clear
-			self.signUpBorder.backgroundColor = Constants.mainOrange
+			self.signUpBorder.backgroundColor = Colors.mainOrange
 			self.authPageViewController.setViewControllers([self.viewControllers[1]], direction: .forward, animated: true)
 		}.startAnimation()
 	}

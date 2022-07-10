@@ -27,7 +27,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 		let button = UIButton()
 		button.setTitle("Login", for: .normal)
 		button.titleLabel?.textColor = .white
-		button.backgroundColor = Constants.mainOrange
+		button.backgroundColor = Colors.mainOrange
 		button.layer.cornerRadius = 60 / 2
 		button.translatesAutoresizingMaskIntoConstraints = false
 		return button
@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 	private let forgotPasscodeButton: UIButton = {
 		let button = UIButton()
 		button.setTitle("Forgot passcode?", for: .normal)
-		button.setTitleColor(Constants.mainOrange, for: .normal)
+		button.setTitleColor(Colors.mainOrange, for: .normal)
 		button.isUserInteractionEnabled = true
 		button.translatesAutoresizingMaskIntoConstraints = false
 		return button
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 	// MARK: - Functions
 	private func setupUI() {
 		// style
-		view.backgroundColor = Constants.authGrayBg
+		view.backgroundColor = Colors.authGrayBg
 		// setup text views
 		let textViewStack = setupTextViews()
 		// subviews

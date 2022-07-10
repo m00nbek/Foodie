@@ -29,7 +29,7 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
 		let button = UIButton()
 		button.setTitle("Register", for: .normal)
 		button.titleLabel?.textColor = .white
-		button.backgroundColor = Constants.mainOrange
+		button.backgroundColor = Colors.mainOrange
 		button.layer.cornerRadius = 60 / 2
 		button.translatesAutoresizingMaskIntoConstraints = false
 		return button
@@ -48,7 +48,7 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
 	// MARK: - Functions
 	private func setupUI() {
 		// style
-		view.backgroundColor = Constants.authGrayBg
+		view.backgroundColor = Colors.authGrayBg
 		// setup text views
 		let textViewStack = setupTextViews()
 		// subviews
