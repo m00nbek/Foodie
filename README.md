@@ -10,4 +10,5 @@ Food delivery app written in VIPER architecture
 pod install
 ```
 3. Open ``Foodie.xcworkspace``
-4. Build & enjoy!
+4. Build & Run
+5. Enjoy!
